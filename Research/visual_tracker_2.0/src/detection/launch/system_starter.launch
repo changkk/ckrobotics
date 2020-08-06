@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+
+<launch>
+  <arg name="node_name"                   value="piksi"/>
+  <arg name="base_station_ip"             default="192.168.0.105"/>
+  <arg name="pi"             default="3.14159265"/>
+
+<rosparam>
+  <!-- NED FRAME, surveyed gimbal location -->
+  gimbal_location_ned: [5.79, -3.378, -0.196]
+  <!-- NED FRAME, surveyed omnicam+fisheye tripod location-->
+  omnicam_location_ned: [7.379, -4.687, -0.196]
+</rosparam>
+
+
+
+  <!--TF Broadcasters-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="rtk_base_broadcaster" args="0 0 0 90*$pi/180 0 $pi world rtk_base_frame" />
+  <node name="gimbal_tf2_broadcaster" pkg="detection" type="detector_starter" output="screen" />
+
+  <!-- Piksi Multi Driver -->
+  <node pkg="piksi_multi_rtk_ros" type="piksi_multi.py" name="$(arg node_name)" output="screen" respawn="true">
+    <param name="interface"  value="tcp"/>
+    <param name="tcp_addr"  value="192.168.0.35"/>
+    <param name="tcp_port"  value="55555"/>
+  </node>
+
+  <!-- Drone detector/tracker -->
+  <node name="detector_starter" pkg="detection" type="detector_starter" output="screen" />
+
+  <!-- Gimbal Driver -->
+  <node name="gimbal_controller_node" pkg="gimbal_controller" type="gimbal_controller_node" output="screen" />
+
+  <!-- MAVROS -->
+  <!--ns = "aircraft">
+  <include file="$(find mavros)/launch/px4.launch">
+    <param name="fcu_url"  value="/dev/aircraft_fcu:57600"/>
+  </include>
+  </ns-->
+
+  <include file="$(find mavros)/launch/px4.launch">
+    <param name="fcu_url"  value="/dev/pixhawk:921600"/>
+  </include>
+
+
+  <!-- GigE Cam Driver -->
+  <node name="tis_rosstarter" pkg="tiscam" type="tis_rosstarter" output="screen" />
+
+  <!-- Omnicam+Fisheye Cam Driver -->
+  <include file="$(find usb_cam)/launch/usb_cam-test.launch"/>
+
+  <!-- Rqt_Image_Viewer -->
+  <node name="rqt_image_view" pkg="rqt_image_view" type="rqt_image_view" output="screen" />  
+
+
+
+
+</launch>

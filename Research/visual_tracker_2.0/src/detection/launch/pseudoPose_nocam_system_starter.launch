@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+
+<launch>
+  <node name="psuedo_rtk_node" pkg="detection" type="psuedo_rtk_node" output="screen" />
+
+
+  <node name="detector_starter" pkg="detection" type="detector_starter" output="screen" />
+  <node name="gimbal_controller_node" pkg="gimbal_controller" type="gimbal_controller_node" output="screen" />
+
+
+<rosparam>
+  gimbal_location: [0, 0, 0]
+</rosparam>
+
+</launch>

@@ -1,0 +1,107 @@
+#include "SBGC.h"
+#include "SBGC_cmd_helpers.cpp"
+#include <termios.h> /* POSIX terminal control definitions */
+#include <stdio.h>   /* Standard input/output definitions */
+#include <string.h>  /* String function definitions */
+#include <unistd.h>  /* UNIX standard function definitions */
+#include <fcntl.h>   /* File control definitions */
+#include <errno.h>   /* Error number definitions */
+#include <iostream>
+
+int fd;
+
+class SBGC_ComObj_derived : public SBGC_ComObj 
+{
+	public:
+	virtual uint16_t getBytesAvailable() 
+    {
+		return 0;
+	}	
+	virtual uint8_t readByte() 
+    {
+		uint8_t reby;
+        char red;
+        int err = read(fd, &red, sizeof red);
+
+        memcpy(&reby,&red, sizeof red);
+
+        if (err < 0)
+        {
+            return err;
+        }
+        else
+        {
+            return reby;
+        }        
+	}	
+	virtual void writeByte(uint8_t b) 
+    {
+        char wry;
+        memcpy(&wry,&b,sizeof b);
+        write(fd,&wry,sizeof wry);
+	}	
+	// Arduino com port is not buffered, so empty space is unknown.
+	virtual uint16_t getOutEmptySpace() 
+    {
+		return 0xFFFF;
+	}
+};
+
+
+
+int open_port(void)
+{
+    fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY | O_NDELAY);/* File descriptor for the port */
+
+    struct termios options;
+    tcgetattr(fd, &options);
+    cfsetispeed(&options, B115200);
+    cfsetospeed(&options, B115200);
+    options.c_cflag |= (CLOCAL | CREAD);
+    tcsetattr(fd,TCSANOW,&options);
+
+    if (fd == -1)
+    {
+        perror("open_port: Unable to open /dev/ttyf1 - ");
+    }
+    else
+        fcntl(fd, F_SETFL, 0);
+
+    return (fd);
+}
+
+int main()
+{
+    open_port();
+    
+    SBGC_ComObj *com_obj;
+    SBGC_ComObj_derived d;
+    com_obj = &d;
+
+    SBGC_Parser par;
+    
+    par.init(com_obj);    
+
+    std::cout << "opening port?" << std::endl;
+    usleep(1000000);
+
+    SBGC_cmd_control_t c = {0, 0, 0, 0, 0, 0, 0};
+
+    c.mode = SBGC_CONTROL_MODE_ANGLE;
+    c.speedROLL = c.speedPITCH = 30*SBGC_SPEED_SCALE;
+    c.speedYAW = 50*SBGC_SPEED_SCALE;
+
+    SBGC_cmd_control_send(c,par);
+    
+    std::cout << "Command Sent" << std::endl;
+    usleep(2000000);
+
+    c.mode = SBGC_CONTROL_MODE_ANGLE;
+	c.anglePITCH = SBGC_DEGREE_TO_ANGLE(30);
+	c.angleYAW = SBGC_DEGREE_TO_ANGLE(-30);
+    SBGC_cmd_control_send(c,par);
+    
+    std::cout << "Command Sent again, closing" << std::endl;
+    close(fd);
+    return(0);
+}

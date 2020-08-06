@@ -1,0 +1,3 @@
+<launch>
+    <param name="pelican" command="cat $(find detection)/model.xml" />
+</launch>

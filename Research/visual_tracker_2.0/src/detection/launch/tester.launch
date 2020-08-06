@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+
+<launch>
+
+  <arg name="fcu_url" default="serial:///dev/ttyTHS2:57600" />
+  <arg name="gcs_url" default="udp://localhost:14556@localhost:14540" />
+  <arg name="tgt_system" default="1" />
+  <arg name="tgt_component" default="50" />
+  <arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
+<arg name="config_yaml" value="$(find mavros)/launch/apm_config.yaml" />
+
+
+
+  <!-- MAVROS -->
+  <group ns = "aircraft">
+  <node pkg="mavros" type="mavros_node" name="mavros" output="screen">
+		<param name="fcu_url"  value="/dev/aircraft_fcu:57600"/>
+		<param name="gcs_url" value="$(arg gcs_url)" />
+	        <param name="target_system_id" value="$(arg tgt_system)" />
+	        <param name="target_component_id" value="$(arg tgt_component)" />
+   	        <param name="conn_heartbeat" value="5.0" />
+  		<param name="conn_timeout" value="5.0" />
+	        <param name="startup_px4_usb_quirk" value="true" />
+	        <rosparam command="load" file="$(arg pluginlists_yaml)" />
+  		<rosparam command="load" file="$(arg config_yaml)" />
+  </node>
+  </group>
+
+    <node pkg="mavros" type="mavros_node" name="mavros" output="screen">
+	        <param name="fcu_url"  value="/dev/pixhawk:921600"/>
+		<param name="gcs_url" value="$(arg gcs_url)" />
+	        <param name="target_system_id" value="$(arg tgt_system)" />
+	        <param name="target_component_id" value="$(arg tgt_component)" />
+   	        <param name="conn_heartbeat" value="5.0" />
+  		<param name="conn_timeout" value="5.0" />
+	        <param name="startup_px4_usb_quirk" value="true" />
+	        <rosparam command="load" file="$(arg pluginlists_yaml)" />
+  		<rosparam command="load" file="$(arg config_yaml)" />
+  </node>
+
+<rosparam>
+  <!-- NED FRAME, surveyed gimbal location -->
+  gimbal_location_ned: [6.175, -3.846, -0.229]
+  <!-- NED FRAME, surveyed omnicam+fisheye tripod location-->
+  omnicam_location_ned: [0, 0, 0]
+</rosparam>
+
+</launch>

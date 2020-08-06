@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+
+import ivt_state_machine
+
+
+if __name__ == '__main__':
+    ivt_state_machine.main()

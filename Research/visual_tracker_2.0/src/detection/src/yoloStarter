@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+
+import yolo_cv_router
+
+
+if __name__ == '__main__':
+    yolo_cv_router.main()

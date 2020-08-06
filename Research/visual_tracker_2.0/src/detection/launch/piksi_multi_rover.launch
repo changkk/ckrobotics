@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Node name -->
+  <arg name="node_name"                   value="piksi"/>
+  <arg name="base_station_ip"             default="192.168.0.105"/>
+
+  <node pkg="piksi_multi_rtk_ros" type="piksi_multi.py" name="$(arg node_name)" output="screen" respawn="true">
+    <param name="interface"  value="tcp"/>
+    <param name="tcp_addr"  value="192.168.0.95"/>
+    <param name="tcp_port"  value="55555"/>
+  </node>
+
+</launch>
