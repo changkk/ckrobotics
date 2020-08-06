@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+
+<launch>
+  <arg name="node_name"                   value="piksi"/>
+  <arg name="base_station_ip"             default="192.168.0.105"/>
+  <arg name="pi"                          default="3.14159265"/>
+
+<rosparam>
+  <!-- ENU FRAME, surveyed gimbal location -->
+  gimbal_location_enu: [-0.2, 0.082, -0.397]
+  <!-- ENU FRAME, surveyed omnicam+fisheye tripod location-->
+  omnicam_location_enu: [1.8, 0.034, -0.1445]
+</rosparam>
+
+
+<!-- fisheye_front2 and fisheye_front represent the heading direction of fisheye lens we will use and those should be same!! -->
+
+<!-- For omnicam stabilization and optical flow detefction
+  <node name="stabilization" pkg="detection" type="stabilization">
+      <param name="image_transport" value="compressed" />
+      <param name="fisheye_front" value="false" />
+  </node>-->
+
+<!-- For range estimation (receive detection data(omnicam and yolo) and estimate range and advertise target position to RVIZ)
+  <node name="range_estimation_correction" pkg="detection" type="range_estimation_correction">
+      <param name="fisheye_front2" value="false" />
+  </node> -->
+
+<!-- For TF and RVIZ visualization -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="omnicam_static_broadcaster_node" args="1.8, 0.034, -0.1445 0 0 0 observer_aircraft omnicam" />
+  <node pkg="detection" type="gimbal_tf" name="gimbal_tf" />
+  <node pkg="detection" type="draw_target" name="draw_target" />
+
+<!-- RVIZ Prediction
+  <node pkg="detection" type="prediction" name="prediction" />-->
+
+
+
+
+
+
+
+
+</launch>

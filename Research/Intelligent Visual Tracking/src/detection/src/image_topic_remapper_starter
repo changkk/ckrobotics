@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+
+import image_topic_remapper
+
+
+if __name__ == '__main__':
+    image_topic_remapper.main()

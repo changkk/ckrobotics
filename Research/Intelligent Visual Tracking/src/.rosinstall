@@ -1,0 +1,12 @@
+- git:
+    local-name: pid
+    uri: https://bitbucket.org/AndyZe/pid.git
+    version: master
+- git:
+    local-name: usb_cam
+    uri: https://github.com/ros-drivers/usb_cam
+    version: master
+- git:
+    local-name: vision_opencv
+    uri: https://github.com/ros-perception/vision_opencv
+    version: kinetic

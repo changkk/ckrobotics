@@ -1,0 +1,4 @@
+<launch>
+  <node name="tracker" pkg="detection" type="tracker_node" output="screen" launch-prefix="xterm -e gdb --args" />
+
+</launch>

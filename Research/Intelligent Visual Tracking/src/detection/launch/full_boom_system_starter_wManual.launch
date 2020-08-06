@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+
+<launch>
+  <arg name="node_name"                   value="piksi"/>
+  <arg name="base_station_ip"             default="192.168.0.105"/>
+  <arg name="pi"                          default="3.14159265"/>
+
+<rosparam>
+  <!-- ENU FRAME, surveyed gimbal location -->
+  gimbal_location_enu: [-0.865, 0.082, -0.347]
+  <!-- ENU FRAME, surveyed omnicam+fisheye tripod location-->
+  omnicam_location_enu: [1.07, 0.082, -0.0945]
+</rosparam>
+
+
+
+  <!--TF Broadcasters-->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="rtk_base_broadcaster_node" args="0 0 0 90*$pi/180 0 $pi map rtk_base_station" />   -->
+  <!-- <node name="gimbal_tf2_broadcaster" pkg="detection" type="gimbal_tf2_broadcaster_node" output="screen" /> -->
+  <!-- <node name="omnicam_tf2_broadcaster" pkg="detection" type="omnicam_tf2_broadcaster_node" output="screen" / -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="omnicam_static_broadcaster_node" args="1.07 0.034 -0.0945 0 0 0 rtk_base_station omnicam" /> -->
+  <!-- <node name="mavros_target_tf2_broadcaster" pkg="detection" type="mavros_target_tf2_broadcaster_node" output="screen" /> -->
+
+  <!-- <node name="aircraft_tf2_broadcaster" pkg="detection" type="aircraft_tf2_broadcaster_node" output="screen" /> -->
+  
+
+  <!-- Piksi Multi Driver -->
+  <!-- <include file="$(find piksi_multi_rtk_ros)/launch/piksi_multi_base_station.launch"/> -->
+
+
+  <!-- MAVROS -->
+  <!--ns = "aircraft" -->
+  <!-- <include file="$(find mavros)/launch/apm2.launch" /> -->
+    <!--param name="fcu_url"  value="/dev/telem_fcu:57600"/>
+  </include>
+  < /ns-->
+
+  <!-- <include file="$(find mavros)/launch/px4.launch">
+    <param name="fcu_url"  value="/dev/hexacopter_fcu:115200"/>
+  </include> -->
+
+  <include file="$(find detection)/launch/visual_tracking_gige_wManual.launch"/>
+
+  <node name="image_topic_remapper_starter" pkg="detection" type="image_topic_remapper_starter" output="screen" />
+
+  <!-- Omnicam Cam Driver -->
+  <include file="$(find detection)/launch/usb_cam-test.launch"/>
+
+  <!-- Rqt_Image_Viewer -->
+  <!-- <node name="rqt_image_view" pkg="rqt_image_view" type="rqt_image_view" output="screen" /> -->
+
+
+
+
+</launch>
