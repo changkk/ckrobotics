@@ -1,0 +1,46 @@
+<!-- -->
+<launch>
+  <arg name="uav_name" default="hexacopter"/>
+  <arg name="debug" default="false"/>
+
+
+  <node pkg="localizer" type="uav_localiser_node" name="uav_localiser" output="screen" >
+  <!-- launch-prefix="xterm -e gdb - -args" -->
+<!--launch-prefix="valgrind - -leak-check=full"-->
+
+    <!--<param name="map_image_path" type="string" value="saved_map.png"  />-->
+        <!--<param name="map_image_path" type="string" value="$(find localizer)/data/arenalarge_col_outsquare.png" />-->
+    <!--<param name="map_image_path" type="string" value="$(find localizer)/data/black_canvas2.png"  />-->
+    <param name="map_image_path" type="string" value="$(find localizer)/data/saved_map.png"  />
+    <!--<param name="map_image_path" type="string" value="$(find localizer)/data/saved_map_clean_thin_nolines.png"  />-->
+    <!--<param name="camera_f_length" value="69.5592" />-->
+        <!--<param name="camera_f_length" value="78.0" />-->
+    <param name="perspective_camera_f_length" value="31.0" />
+    <param name="fisheye_camera_f_length" value="31.0" />
+    <!--<param name="xoffset" value="-43.0" />
+    <param name="yoffset" value="-46.00" />-->
+    <param name="xoffset" value="0" />
+    <param name="yoffset" value="0" />
+    <param name="rtkfix_timer" value="2" />
+    <param name="debug" value="$(arg debug)" />
+
+    <param name="optimisation_dof" type="string" value="11111111" />
+    <!--<param name="optimisation_dof" type="string" value="10000000" />-->
+
+    <!-- 
+    Bit functions.
+    Gimble Enabled | toggle optimise | Optimise x | y | z | roll | pitch | yaw
+    -->
+<!--focal 55 for pan_tilt_camera, 12 for the other-->
+
+    <param name="pose_sub_topic" value="/$(arg uav_name)/mavros/local_position/odom" />
+    <param name="rtk_pose_topic" value="/$(arg uav_name)/gps/rtkfix" />
+    <param name="laser_topic" value="/$(arg uav_name)/localizer/scanpos" />
+    <param name="fisheye_service_topic" value="/$(arg uav_name)/localizer/fisheye_srv"/>
+  </node>
+ <node if="$(arg debug)"  pkg="image_view" type="image_view" name="debug_image_view" ns="$(arg uav_name)">
+   <remap from="image" to="debug_image"/>
+ </node>
+  <!--<node pkg="localizer" type="initialpose.sh" name="initialpose" />-->
+
+</launch>

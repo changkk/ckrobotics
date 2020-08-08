@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Launch arena -->
+  <include file="$(find mbzirc_gazebo)/launch/support/arena.launch" />
+
+  <!-- Launch models -->
+  <include file="$(find mbzirc_gazebo)/launch/support/challenge_2_models.launch" />
+
+</launch>

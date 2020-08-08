@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="global_arm" args="10 10 5 0 0 0 global_map arm_origin 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="arm_baselink" args="0 0 0 0 0 0 arm_origin base_link 100"/>
+</launch>

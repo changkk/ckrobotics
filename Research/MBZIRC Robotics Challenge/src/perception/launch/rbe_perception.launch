@@ -1,0 +1,9 @@
+<launch>
+
+	<arg name="fisheye_calibration" value="$(find perception)/data/calib_results_4.txt" />
+      <node name="rbe_perception" pkg="perception" type="rbe_perception" output="screen">
+        <param name="fisheye_calibration" value="$(arg fisheye_calibration)" />
+      </node>
+
+
+</launch>

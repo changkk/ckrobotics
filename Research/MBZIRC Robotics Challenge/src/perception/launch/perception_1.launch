@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="pan_tilt_perception" pkg="perception" type="pan_tilt_perception" output="screen"/>
+
+</launch>

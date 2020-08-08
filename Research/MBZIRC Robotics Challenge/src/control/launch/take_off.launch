@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="truck_search_and_track" pkg="control" type="truck_search_and_track" output="screen"/>
+
+</launch>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="pose_sync_node" pkg="localizer" type="pose_sync_node" args="pose_sync_node" output="screen"/>
+  <node name="global_map_rtk_gps" pkg="tf" type="static_transform_publisher" args="-10 -45 1.34 1.53 0 0 global_map gps 100"/>
+</launch>

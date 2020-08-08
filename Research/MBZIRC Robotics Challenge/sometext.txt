@@ -1,0 +1,835 @@
+... logging to /home/usl/.ros/log/48ed4e3a-f49b-11e6-9515-74d02bb81364/roslaunch-usl-G750JW-22420.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/usl/cmsvt_mbzirc/src/mbzirc_gazebo/launch/challenge_3.launch
+[1mstarted roslaunch server http://usl-G750JW:36608/[0m
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /hexacopter0/mavros/
+ * /hexacopter1/mavros/
+ * /hexacopter2/mavros/
+
+PARAMETERS
+ * /hexacopter0/high_level_control/name: hexacopter0
+ * /hexacopter0/high_level_control/target_height: 1.0
+ * /hexacopter0/mavros/cmd/use_comp_id_system_control: False
+ * /hexacopter0/mavros/conn/heartbeat_rate: 1.0
+ * /hexacopter0/mavros/conn/system_time_rate: 1.0
+ * /hexacopter0/mavros/conn/timeout: 10.0
+ * /hexacopter0/mavros/conn/timesync_rate: 10.0
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/orientation: ROLL_180
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /hexacopter0/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /hexacopter0/mavros/distance_sensor/laser_1_sub/id: 3
+ * /hexacopter0/mavros/distance_sensor/laser_1_sub/orientation: ROLL_180
+ * /hexacopter0/mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/id: 1
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/orientation: ROLL_180
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /hexacopter0/mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /hexacopter0/mavros/distance_sensor/sonar_1_sub/id: 2
+ * /hexacopter0/mavros/distance_sensor/sonar_1_sub/orientation: ROLL_180
+ * /hexacopter0/mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /hexacopter0/mavros/fcu_url: udp://localhost:1...
+ * /hexacopter0/mavros/gcs_url: 
+ * /hexacopter0/mavros/global_position/frame_id: fcu
+ * /hexacopter0/mavros/global_position/rot_covariance: 99999.0
+ * /hexacopter0/mavros/global_position/tf/child_frame_id: fcu_utm
+ * /hexacopter0/mavros/global_position/tf/frame_id: local_origin
+ * /hexacopter0/mavros/global_position/tf/send: True
+ * /hexacopter0/mavros/image/frame_id: px4flow
+ * /hexacopter0/mavros/imu/angular_velocity_stdev: 0.000349065850399
+ * /hexacopter0/mavros/imu/frame_id: fcu
+ * /hexacopter0/mavros/imu/linear_acceleration_stdev: 0.0003
+ * /hexacopter0/mavros/imu/magnetic_stdev: 0.0
+ * /hexacopter0/mavros/imu/orientation_stdev: 1.0
+ * /hexacopter0/mavros/local_position/frame_id: fcu
+ * /hexacopter0/mavros/local_position/tf/child_frame_id: fcu
+ * /hexacopter0/mavros/local_position/tf/frame_id: local_origin
+ * /hexacopter0/mavros/local_position/tf/send: True
+ * /hexacopter0/mavros/local_position/tf/send_fcu: False
+ * /hexacopter0/mavros/mission/pull_after_gcs: True
+ * /hexacopter0/mavros/mocap/use_pose: True
+ * /hexacopter0/mavros/mocap/use_tf: False
+ * /hexacopter0/mavros/plugin_blacklist: ['safety_area', '...
+ * /hexacopter0/mavros/plugin_whitelist: []
+ * /hexacopter0/mavros/px4flow/frame_id: px4flow
+ * /hexacopter0/mavros/px4flow/ranger_fov: 0.0
+ * /hexacopter0/mavros/px4flow/ranger_max_range: 5.0
+ * /hexacopter0/mavros/px4flow/ranger_min_range: 0.3
+ * /hexacopter0/mavros/safety_area/p1/x: 1.0
+ * /hexacopter0/mavros/safety_area/p1/y: 1.0
+ * /hexacopter0/mavros/safety_area/p1/z: 1.0
+ * /hexacopter0/mavros/safety_area/p2/x: -1.0
+ * /hexacopter0/mavros/safety_area/p2/y: -1.0
+ * /hexacopter0/mavros/safety_area/p2/z: -1.0
+ * /hexacopter0/mavros/setpoint_accel/send_force: False
+ * /hexacopter0/mavros/setpoint_attitude/reverse_throttle: False
+ * /hexacopter0/mavros/setpoint_attitude/tf/child_frame_id: attitude
+ * /hexacopter0/mavros/setpoint_attitude/tf/frame_id: local_origin
+ * /hexacopter0/mavros/setpoint_attitude/tf/listen: False
+ * /hexacopter0/mavros/setpoint_attitude/tf/rate_limit: 10.0
+ * /hexacopter0/mavros/setpoint_position/tf/child_frame_id: setpoint
+ * /hexacopter0/mavros/setpoint_position/tf/frame_id: local_origin
+ * /hexacopter0/mavros/setpoint_position/tf/listen: False
+ * /hexacopter0/mavros/setpoint_position/tf/rate_limit: 50.0
+ * /hexacopter0/mavros/startup_px4_usb_quirk: True
+ * /hexacopter0/mavros/sys/disable_diag: False
+ * /hexacopter0/mavros/sys/min_voltage: 10.0
+ * /hexacopter0/mavros/target_component_id: 1
+ * /hexacopter0/mavros/target_system_id: 1
+ * /hexacopter0/mavros/tdr_radio/low_rssi: 40
+ * /hexacopter0/mavros/time/time_ref_source: fcu
+ * /hexacopter0/mavros/time/timesync_avg_alpha: 0.6
+ * /hexacopter0/mavros/vibration/frame_id: vibration
+ * /hexacopter0/mavros/vision_pose/tf/child_frame_id: vision
+ * /hexacopter0/mavros/vision_pose/tf/frame_id: local_origin
+ * /hexacopter0/mavros/vision_pose/tf/listen: False
+ * /hexacopter0/mavros/vision_pose/tf/rate_limit: 10.0
+ * /hexacopter0/mavros/vision_speed/listen_twist: False
+ * /hexacopter0/uav_control/autopilot: px4
+ * /hexacopter0/uav_control/localization_topic: localizer/rtk_odom
+ * /hexacopter0/uav_localiser/uav_gazebo_model_name: hexacopter0
+ * /hexacopter0/uav_localiser/uav_pose/publish_topic: localizer/rtk_pose
+ * /hexacopter0/uav_localiser/uav_pose/subscribe_topic: /gazebo/model_states
+ * /hexacopter0/uav_perception/fisheye_camera: fisheye_camera/im...
+ * /hexacopter0/uav_perception/odometry_topic: localizer/rtk_odom
+ * /hexacopter0/uav_perception/perspective_camera: perspective_camer...
+ * /hexacopter1/high_level_control/name: hexacopter1
+ * /hexacopter1/high_level_control/target_height: 1.0
+ * /hexacopter1/mavros/cmd/use_comp_id_system_control: False
+ * /hexacopter1/mavros/conn/heartbeat_rate: 1.0
+ * /hexacopter1/mavros/conn/system_time_rate: 1.0
+ * /hexacopter1/mavros/conn/timeout: 10.0
+ * /hexacopter1/mavros/conn/timesync_rate: 10.0
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/orientation: ROLL_180
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /hexacopter1/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /hexacopter1/mavros/distance_sensor/laser_1_sub/id: 3
+ * /hexacopter1/mavros/distance_sensor/laser_1_sub/orientation: ROLL_180
+ * /hexacopter1/mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/id: 1
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/orientation: ROLL_180
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /hexacopter1/mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /hexacopter1/mavros/distance_sensor/sonar_1_sub/id: 2
+ * /hexacopter1/mavros/distance_sensor/sonar_1_sub/orientation: ROLL_180
+ * /hexacopter1/mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /hexacopter1/mavros/fcu_url: udp://localhost:1...
+ * /hexacopter1/mavros/gcs_url: 
+ * /hexacopter1/mavros/global_position/frame_id: fcu
+ * /hexacopter1/mavros/global_position/rot_covariance: 99999.0
+ * /hexacopter1/mavros/global_position/tf/child_frame_id: fcu_utm
+ * /hexacopter1/mavros/global_position/tf/frame_id: local_origin
+ * /hexacopter1/mavros/global_position/tf/send: True
+ * /hexacopter1/mavros/image/frame_id: px4flow
+ * /hexacopter1/mavros/imu/angular_velocity_stdev: 0.000349065850399
+ * /hexacopter1/mavros/imu/frame_id: fcu
+ * /hexacopter1/mavros/imu/linear_acceleration_stdev: 0.0003
+ * /hexacopter1/mavros/imu/magnetic_stdev: 0.0
+ * /hexacopter1/mavros/imu/orientation_stdev: 1.0
+ * /hexacopter1/mavros/local_position/frame_id: fcu
+ * /hexacopter1/mavros/local_position/tf/child_frame_id: fcu
+ * /hexacopter1/mavros/local_position/tf/frame_id: local_origin
+ * /hexacopter1/mavros/local_position/tf/send: True
+ * /hexacopter1/mavros/local_position/tf/send_fcu: False
+ * /hexacopter1/mavros/mission/pull_after_gcs: True
+ * /hexacopter1/mavros/mocap/use_pose: True
+ * /hexacopter1/mavros/mocap/use_tf: False
+ * /hexacopter1/mavros/plugin_blacklist: ['safety_area', '...
+ * /hexacopter1/mavros/plugin_whitelist: []
+ * /hexacopter1/mavros/px4flow/frame_id: px4flow
+ * /hexacopter1/mavros/px4flow/ranger_fov: 0.0
+ * /hexacopter1/mavros/px4flow/ranger_max_range: 5.0
+ * /hexacopter1/mavros/px4flow/ranger_min_range: 0.3
+ * /hexacopter1/mavros/safety_area/p1/x: 1.0
+ * /hexacopter1/mavros/safety_area/p1/y: 1.0
+ * /hexacopter1/mavros/safety_area/p1/z: 1.0
+ * /hexacopter1/mavros/safety_area/p2/x: -1.0
+ * /hexacopter1/mavros/safety_area/p2/y: -1.0
+ * /hexacopter1/mavros/safety_area/p2/z: -1.0
+ * /hexacopter1/mavros/setpoint_accel/send_force: False
+ * /hexacopter1/mavros/setpoint_attitude/reverse_throttle: False
+ * /hexacopter1/mavros/setpoint_attitude/tf/child_frame_id: attitude
+ * /hexacopter1/mavros/setpoint_attitude/tf/frame_id: local_origin
+ * /hexacopter1/mavros/setpoint_attitude/tf/listen: False
+ * /hexacopter1/mavros/setpoint_attitude/tf/rate_limit: 10.0
+ * /hexacopter1/mavros/setpoint_position/tf/child_frame_id: setpoint
+ * /hexacopter1/mavros/setpoint_position/tf/frame_id: local_origin
+ * /hexacopter1/mavros/setpoint_position/tf/listen: False
+ * /hexacopter1/mavros/setpoint_position/tf/rate_limit: 50.0
+ * /hexacopter1/mavros/startup_px4_usb_quirk: True
+ * /hexacopter1/mavros/sys/disable_diag: False
+ * /hexacopter1/mavros/sys/min_voltage: 10.0
+ * /hexacopter1/mavros/target_component_id: 1
+ * /hexacopter1/mavros/target_system_id: 1
+ * /hexacopter1/mavros/tdr_radio/low_rssi: 40
+ * /hexacopter1/mavros/time/time_ref_source: fcu
+ * /hexacopter1/mavros/time/timesync_avg_alpha: 0.6
+ * /hexacopter1/mavros/vibration/frame_id: vibration
+ * /hexacopter1/mavros/vision_pose/tf/child_frame_id: vision
+ * /hexacopter1/mavros/vision_pose/tf/frame_id: local_origin
+ * /hexacopter1/mavros/vision_pose/tf/listen: False
+ * /hexacopter1/mavros/vision_pose/tf/rate_limit: 10.0
+ * /hexacopter1/mavros/vision_speed/listen_twist: False
+ * /hexacopter1/uav_control/autopilot: px4
+ * /hexacopter1/uav_control/localization_topic: localizer/rtk_odom
+ * /hexacopter1/uav_localiser/uav_gazebo_model_name: hexacopter1
+ * /hexacopter1/uav_localiser/uav_pose/publish_topic: localizer/rtk_pose
+ * /hexacopter1/uav_localiser/uav_pose/subscribe_topic: /gazebo/model_states
+ * /hexacopter1/uav_perception/fisheye_camera: fisheye_camera/im...
+ * /hexacopter1/uav_perception/odometry_topic: localizer/rtk_odom
+ * /hexacopter1/uav_perception/perspective_camera: perspective_camer...
+ * /hexacopter2/high_level_control/name: hexacopter2
+ * /hexacopter2/high_level_control/target_height: 1.0
+ * /hexacopter2/mavros/cmd/use_comp_id_system_control: False
+ * /hexacopter2/mavros/conn/heartbeat_rate: 1.0
+ * /hexacopter2/mavros/conn/system_time_rate: 1.0
+ * /hexacopter2/mavros/conn/timeout: 10.0
+ * /hexacopter2/mavros/conn/timesync_rate: 10.0
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/orientation: ROLL_180
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /hexacopter2/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /hexacopter2/mavros/distance_sensor/laser_1_sub/id: 3
+ * /hexacopter2/mavros/distance_sensor/laser_1_sub/orientation: ROLL_180
+ * /hexacopter2/mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/id: 1
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/orientation: ROLL_180
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /hexacopter2/mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /hexacopter2/mavros/distance_sensor/sonar_1_sub/id: 2
+ * /hexacopter2/mavros/distance_sensor/sonar_1_sub/orientation: ROLL_180
+ * /hexacopter2/mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /hexacopter2/mavros/fcu_url: udp://localhost:1...
+ * /hexacopter2/mavros/gcs_url: 
+ * /hexacopter2/mavros/global_position/frame_id: fcu
+ * /hexacopter2/mavros/global_position/rot_covariance: 99999.0
+ * /hexacopter2/mavros/global_position/tf/child_frame_id: fcu_utm
+ * /hexacopter2/mavros/global_position/tf/frame_id: local_origin
+ * /hexacopter2/mavros/global_position/tf/send: True
+ * /hexacopter2/mavros/image/frame_id: px4flow
+ * /hexacopter2/mavros/imu/angular_velocity_stdev: 0.000349065850399
+ * /hexacopter2/mavros/imu/frame_id: fcu
+ * /hexacopter2/mavros/imu/linear_acceleration_stdev: 0.0003
+ * /hexacopter2/mavros/imu/magnetic_stdev: 0.0
+ * /hexacopter2/mavros/imu/orientation_stdev: 1.0
+ * /hexacopter2/mavros/local_position/frame_id: fcu
+ * /hexacopter2/mavros/local_position/tf/child_frame_id: fcu
+ * /hexacopter2/mavros/local_position/tf/frame_id: local_origin
+ * /hexacopter2/mavros/local_position/tf/send: True
+ * /hexacopter2/mavros/local_position/tf/send_fcu: False
+ * /hexacopter2/mavros/mission/pull_after_gcs: True
+ * /hexacopter2/mavros/mocap/use_pose: True
+ * /hexacopter2/mavros/mocap/use_tf: False
+ * /hexacopter2/mavros/plugin_blacklist: ['safety_area', '...
+ * /hexacopter2/mavros/plugin_whitelist: []
+ * /hexacopter2/mavros/px4flow/frame_id: px4flow
+ * /hexacopter2/mavros/px4flow/ranger_fov: 0.0
+ * /hexacopter2/mavros/px4flow/ranger_max_range: 5.0
+ * /hexacopter2/mavros/px4flow/ranger_min_range: 0.3
+ * /hexacopter2/mavros/safety_area/p1/x: 1.0
+ * /hexacopter2/mavros/safety_area/p1/y: 1.0
+ * /hexacopter2/mavros/safety_area/p1/z: 1.0
+ * /hexacopter2/mavros/safety_area/p2/x: -1.0
+ * /hexacopter2/mavros/safety_area/p2/y: -1.0
+ * /hexacopter2/mavros/safety_area/p2/z: -1.0
+ * /hexacopter2/mavros/setpoint_accel/send_force: False
+ * /hexacopter2/mavros/setpoint_attitude/reverse_throttle: False
+ * /hexacopter2/mavros/setpoint_attitude/tf/child_frame_id: attitude
+ * /hexacopter2/mavros/setpoint_attitude/tf/frame_id: local_origin
+ * /hexacopter2/mavros/setpoint_attitude/tf/listen: False
+ * /hexacopter2/mavros/setpoint_attitude/tf/rate_limit: 10.0
+ * /hexacopter2/mavros/setpoint_position/tf/child_frame_id: setpoint
+ * /hexacopter2/mavros/setpoint_position/tf/frame_id: local_origin
+ * /hexacopter2/mavros/setpoint_position/tf/listen: False
+ * /hexacopter2/mavros/setpoint_position/tf/rate_limit: 50.0
+ * /hexacopter2/mavros/startup_px4_usb_quirk: True
+ * /hexacopter2/mavros/sys/disable_diag: False
+ * /hexacopter2/mavros/sys/min_voltage: 10.0
+ * /hexacopter2/mavros/target_component_id: 1
+ * /hexacopter2/mavros/target_system_id: 1
+ * /hexacopter2/mavros/tdr_radio/low_rssi: 40
+ * /hexacopter2/mavros/time/time_ref_source: fcu
+ * /hexacopter2/mavros/time/timesync_avg_alpha: 0.6
+ * /hexacopter2/mavros/vibration/frame_id: vibration
+ * /hexacopter2/mavros/vision_pose/tf/child_frame_id: vision
+ * /hexacopter2/mavros/vision_pose/tf/frame_id: local_origin
+ * /hexacopter2/mavros/vision_pose/tf/listen: False
+ * /hexacopter2/mavros/vision_pose/tf/rate_limit: 10.0
+ * /hexacnode name: sitl_hexacopter0
+data path: /home/usl/cmsvt_mbzirc/src/px4_firmware
+commands file: /home/usl/cmsvt_mbzirc/src/mbzirc_gazebo/models/hexacopter/config/hexacopter0
+[0m[ INFO] [1487285884.861664725]: FCU URL: udp://localhost:14640@localhost:14657[0m
+[33m[ WARN] [1487285884.862326798]: init: message from ASLUAV, MSG-ID 201 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862508838]: init: message from autoquad, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862522561]: init: message from autoquad, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862683123]: init: message from matrixpilot, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862695212]: init: message from matrixpilot, MSG-ID 151 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862708338]: init: message from matrixpilot, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862719698]: init: message from matrixpilot, MSG-ID 153 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862731543]: init: message from matrixpilot, MSG-ID 155 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862742560]: init: message from matrixpilot, MSG-ID 156 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862753394]: init: message from matrixpilot, MSG-ID 157 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862765183]: init: message from matrixpilot, MSG-ID 158 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862776187]: init: message from matrixpilot, MSG-ID 170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862787567]: init: message from matrixpilot, MSG-ID 171 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862798658]: init: message from matrixpilot, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862809713]: init: message from matrixpilot, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862821193]: init: message from matrixpilot, MSG-ID 174 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862832317]: init: message from matrixpilot, MSG-ID 175 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862843271]: init: message from matrixpilot, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862854250]: init: message from matrixpilot, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862865916]: init: message from matrixpilot, MSG-ID 178 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862876948]: init: message from matrixpilot, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862888415]: init: message from matrixpilot, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862899502]: init: message from matrixpilot, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862910520]: init: message from matrixpilot, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862921773]: init: message from matrixpilot, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862932768]: init: message from matrixpilot, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862943723]: init: message from matrixpilot, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.862954968]: init: message from matrixpilot, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863120990]: init: message from paparazzi, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863133431]: init: message from paparazzi, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863145167]: init: message from paparazzi, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863156130]: init: message from paparazzi, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863167297]: init: message from paparazzi, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863330648]: init: message from slugs, MSG-ID 170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863375998]: init: message from slugs, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863421406]: init: message from slugs, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863445764]: init: message from slugs, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863466247]: init: message from slugs, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863486102]: init: message from slugs, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863505914]: init: message from slugs, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863525867]: init: message from slugs, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863546005]: init: message from slugs, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863569559]: init: message from slugs, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863590771]: init: message from slugs, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863610115]: init: message from slugs, MSG-ID 188 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863630716]: init: message from slugs, MSG-ID 191 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863648292]: init: message from slugs, MSG-ID 192 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863667627]: init: message from slugs, MSG-ID 193 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285884.863680050]: init: message from slugs, MSG-ID 194 ignored! Table has different entry.[0m
+[0m[ INFO] [1487285884.864272047]: udp0: Bind address: 127.0.0.1:14640[0m
+[0m[ INFO] [1487285884.864350285]: udp0: Remote address: 127.0.0.1:14657[0m
+[0m[ INFO] [1487285884.864614967]: GCS bridge disabled[0m
+[0m[ INFO] [1487285884.897664238]: Plugin 3dr_radio loaded[0m
+[0m[ INFO] [1487285884.899803591]: Plugin 3dr_radio initialized[0m
+[0m[ INFO] [1487285884.899885637]: Plugin actuator_control loaded[0m
+[0m[ INFO] [1487285884.902779060]: Plugin actuator_control initialized[0m
+[0m[ INFO] [1487285884.902853819]: Plugin altitude loaded[0m
+[0m[ INFO] [1487285884.903902906]: Plugin altitude initialized[0m
+[0m[ INFO] [1487285884.903977096]: Plugin command loaded[0m
+[0m[ INFO] [1487285884.909086688]: Plugin command initialized[0m
+[0m[ INFO] [1487285884.909170439]: Plugin ftp loaded[0m
+[0m[ INFO] [1487285884.916973891]: Plugin ftp initialized[0m
+[0m[ INFO] [1487285884.917065545]: Plugin global_position loaded[0m
+[0m[ INFO] [1487285884.924601426]: Plugin global_position initialized[0m
+[0m[ INFO] [1487285884.924687504]: Plugin hil_actuator_controls loaded[0m
+[0m[ INFO] [1487285884.925257812]: Plugin hil_actuator_controls initialized[0m
+[0m[ INFO] [1487285884.925328250]: Plugin hil_controls loaded[0m
+[0m[ INFO] [1487285884.925888546]: Plugin hil_controls initialized[0m
+[0m[ INFO] [1487285884.925953233]: Plugin imu_pub loaded[0m
+[0m[ INFO] [1487285884.932984422]: Plugin imu_pub initialized[0m
+[0m[ INFO] [1487285884.933070526]: Plugin local_position loaded[0m
+[0m[ INFO] [1487285884.939457074]: Plugin local_position initialized[0m
+[0m[ INFO] [1487285884.939551066]: Plugin manual_control loaded[0m
+[0m[ INFO] [1487285884.940166126]: Plugin manual_control initialized[0m
+[0m[ INFO] [1487285884.940254346]: Plugin param loaded[0m
+[0m[ INFO] [1487285884.942566811]: Plugin param initialized[0m
+[0m[ INFO] [1487285884.942655115]: Plugin rc_io loaded[0m
+[0m[ INFO] [1487285884.946522211]: Plugin rc_io initialized[0m
+[0m[ INFO] [1487285884.946554663]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1487285884.946630530]: Plugin setpoint_accel loaded[0m
+[0m[ INFO] [1487285884.950361693]: Plugin setpoint_accel initialized[0m
+[0m[ INFO] [1487285884.950453381]: Plugin setpoint_attitude loaded[0m
+[0m[ INFO] [1487285884.962605489]: Plugin setpoint_attitude initialized[0node name: sitl_hexacopter1
+data path: /home/usl/cmsvt_mbzirc/src/px4_firmware
+commands file: /home/usl/cmsvt_mbzirc/src/mbzirc_gazebo/models/hexacopter/config/hexacopter1
+[0m[ INFO] [1487285885.086958667]: FCU URL: udp://localhost:14740@localhost:14757[0m
+[33m[ WARN] [1487285885.087714915]: init: message from ASLUAV, MSG-ID 201 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.087933790]: init: message from autoquad, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.087947789]: init: message from autoquad, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088179396]: init: message from matrixpilot, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088197077]: init: message from matrixpilot, MSG-ID 151 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088211830]: init: message from matrixpilot, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088225783]: init: message from matrixpilot, MSG-ID 153 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088240228]: init: message from matrixpilot, MSG-ID 155 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088254020]: init: message from matrixpilot, MSG-ID 156 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088268311]: init: message from matrixpilot, MSG-ID 157 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088282534]: init: message from matrixpilot, MSG-ID 158 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088297181]: init: message from matrixpilot, MSG-ID 170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088311253]: init: message from matrixpilot, MSG-ID 171 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088326147]: init: message from matrixpilot, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088339994]: init: message from matrixpilot, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088354435]: init: message from matrixpilot, MSG-ID 174 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088369339]: init: message from matrixpilot, MSG-ID 175 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088404868]: init: message from matrixpilot, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088417128]: init: message from matrixpilot, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088429386]: init: message from matrixpilot, MSG-ID 178 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088443572]: init: message from matrixpilot, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088457676]: init: message from matrixpilot, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088470835]: init: message from matrixpilot, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088484923]: init: message from matrixpilot, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088496858]: init: message from matrixpilot, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088508453]: init: message from matrixpilot, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088520031]: init: message from matrixpilot, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088531612]: init: message from matrixpilot, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088731602]: init: message from paparazzi, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088744726]: init: message from paparazzi, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088756552]: init: message from paparazzi, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088768866]: init: message from paparazzi, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088784793]: init: message from paparazzi, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.088983315]: init: message from slugs, MSG-ID 170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089031102]: init: message from slugs, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089044000]: init: message from slugs, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089059627]: init: message from slugs, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089075136]: init: message from slugs, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089088536]: init: message from slugs, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089102427]: init: message from slugs, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089117248]: init: message from slugs, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089131342]: init: message from slugs, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089143224]: init: message from slugs, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089157685]: init: message from slugs, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089171712]: init: message from slugs, MSG-ID 188 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089187599]: init: message from slugs, MSG-ID 191 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089200957]: init: message from slugs, MSG-ID 192 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089214658]: init: message from slugs, MSG-ID 193 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285885.089229295]: init: message from slugs, MSG-ID 194 ignored! Table has different entry.[0m
+[0m[ INFO] [1487285885.089810581]: udp0: Bind address: 127.0.0.1:14740[0m
+[0m[ INFO] [1487285885.089877838]: udp0: Remote address: 127.0.0.1:14757[0m
+[0m[ INFO] [1487285885.090100338]: GCS bridge disabled[0m
+[0m[ INFO] [1487285885.124775025]: Plugin 3dr_radio loaded[0m
+[0m[ INFO] [1487285885.126417656]: Plugin 3dr_radio initialized[0m
+[0m[ INFO] [1487285885.126487648]: Plugin actuator_control loaded[0m
+[0m[ INFO] [1487285885.129232028]: Plugin actuator_control initialized[0m
+[0m[ INFO] [1487285885.129315434]: Plugin altitude loaded[0m
+[0m[ INFO] [1487285885.130780244]: Plugin altitude initialized[0m
+[0m[ INFO] [1487285885.130862297]: Plugin command loaded[0m
+[0m[ INFO] [1487285885.135516271]: Plugin command initialized[0m
+[0m[ INFO] [1487285885.135605141]: Plugin ftp loaded[0m
+[0m[ INFO] [1487285885.143641097]: Plugin ftp initialized[0m
+[0m[ INFO] [1487285885.143727778]: Plugin global_position loaded[0m
+[0m[ INFO] [1487285885.151971685]: Plugin global_position initialized[0m
+[0m[ INFO] [1487285885.152127720]: Plugin hil_actuator_controls loaded[0m
+[0m[ INFO] [1487285885.152739611]: Plugin hil_actuator_controls initialized[0m
+[0m[ INFO] [1487285885.152801813]: Plugin hil_controls loaded[0m
+[0m[ INFO] [1487285885.153312920]: Plugin hil_controls initialized[0m
+[0m[ INFO] [1487285885.153366155]: Plugin imu_pub loaded[0m
+[0m[ INFO] [1487285885.159718134]: Plugin imu_pub initialized[0m
+[0m[ INFO] [1487285885.159794037]: Plugin local_position loaded[0m
+[0m[ INFO] [1487285885.167650905]: Plugin local_position initialized[0m
+[0m[ INFO] [1487285885.167735437]: Plugin manual_control loaded[0m
+[0m[ INFO] [1487285885.168290483]: Plugin manual_control initialized[0m
+[0m[ INFO] [1487285885.168354365]: Plugin param loaded[0m
+[0m[ INFO] [1487285885.170447690]: Plugin param initialized[0m
+[0m[ INFO] [1487285885.170524428]: Plugin rc_io loaded[0m
+[0m[ INFO] [1487285885.174609907]: Plugin rc_io initialized[0m
+[0m[ INFO] [1487285885.174669357]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1487285885.174813206]: Plugin setpoint_accel loaded[0m
+[0m[ INFO] [1487285885.182681281]: Plugin setpoint_accel initialized[0m
+[0m[ INFO] [1487285885.182794161]: Plugin setpoint_attitude loaded[0m
+[0m[ INFO] [1487285885.195594869]: Plugin setpoint_attitude initialized[0node name: sitl_hexacopter2
+data path: /home/usl/cmsvt_mbzirc/src/px4_firmware
+commands file: /home/usl/cmsvt_mbzirc/src/mbzirc_gazebo/models/hexacopter/config/hexacopter2
+opter2/mavros/vision_speed/listen_twist: False
+ * /hexacopter2/uav_control/autopilot: px4
+ * /hexacopter2/uav_control/localization_topic: localizer/rtk_odom
+ * /hexacopter2/uav_localiser/uav_gazebo_model_name: hexacopter2
+ * /hexacopter2/uav_localiser/uav_pose/publish_topic: localizer/rtk_pose
+ * /hexacopter2/uav_localiser/uav_pose/subscribe_topic: /gazebo/model_states
+ * /hexacopter2/uav_perception/fisheye_camera: fisheye_camera/im...
+ * /hexacopter2/uav_perception/odometry_topic: localizer/rtk_odom
+ * /hexacopter2/uav_perception/perspective_camera: perspective_camer...
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.6
+ * /use_sim_time: True
+
+NODES
+  /hexacopter2/
+    high_level_control (control/high_level_control)
+    mavros (mavros/mavros_node)
+    perspective_image_view (image_view/image_view)
+    sitl_hexacopter2 (px4/px4)
+    stateMachChal3 (decision_making_tutorial/stateMachChal3)
+    target_display (perception/target_display)
+    uav_control (control/mavros_control)
+    uav_localiser (localizer/rtk_simulator_node)
+    uav_perception (perception/challenge3_perception)
+    vehicle_spawn_usl_G750JW_22420_3842036683494905884 (gazebo_ros/spawn_model)
+  /hexacopter0/
+    high_level_control (control/high_level_control)
+    mavros (mavros/mavros_node)
+    perspective_image_view (image_view/image_view)
+    perspective_image_view1 (image_view/image_view)
+    sitl_hexacopter0 (px4/px4)
+    stateMachChal3 (decision_making_tutorial/stateMachChal3)
+    target_display (perception/target_display)
+    uav_control (control/mavros_control)
+    uav_localiser (localizer/rtk_simulator_node)
+    uav_perception (perception/challenge3_perception)
+    vehicle_spawn_usl_G750JW_22420_8173484557781072434 (gazebo_ros/spawn_model)
+  /
+    environment_3 (mbzirc_gazebo/environment_manager_3.py)
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    rqt (rqt_gui/rqt_gui)
+  /hexacopter1/
+    high_level_control (control/high_level_control)
+    mavros (mavros/mavros_node)
+    perspective_image_view (image_view/image_view)
+    sitl_hexacopter1 (px4/px4)
+    stateMachChal3 (decision_making_tutorial/stateMachChal3)
+    target_display (perception/target_display)
+    uav_control (control/mavros_control)
+    uav_localiser (localizer/rtk_simulator_node)
+    uav_perception (perception/challenge3_perception)
+    vehicle_spawn_usl_G750JW_22420_5935506499995800714 (gazebo_ros/spawn_model)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/usl/cmsvt_mbzirc/src/mbzirc_gazebo/launch/challenge_3.launch http://localhost:11311
+core service [/rosout] found
+[1mprocess[gazebo-1]: started with pid [22464][0m
+[1mprocess[gazebo_gui-2]: started with pid [22469][0m
+[1mprocess[hexacopter0/sitl_hexacopter0-3]: started with pid [22529][0m
+[1mprocess[hexacopter0/vehicle_spawn_usl_G750JW_22420_8173484557781072434-4]: started with pid [22537][0m
+[1mprocess[hexacopter0/mavros-5]: started with pid [22538][0m
+[1mprocess[hexacopter1/sitl_hexacopter1-6]: started with pid [22770][0m
+[1mprocess[hexacopter1/vehicle_spawn_usl_G750JW_22420_5935506499995800714-7]: started with pid [22793][0m
+[1mprocess[hexacopter1/mavros-8]: started with pid [22797][0m
+[1mprocess[hexacopter2/sitl_hexacopter2-9]: started with pid [23090][0m
+[1mprocess[hexacopter2/vehicle_spawn_usl_G750JW_22420_3842036683494905884-10]: started with pid [23109][0m
+[1mprocess[hexacopter2/mavros-11]: started with pid [23115][0m
+[1mprocess[environment_3-12]: started with pid [23118][0m
+[1mprocess[hexacopter0/uav_perception-13]: started with pid [23123][0m
+[1mprocess[hexacopter0/uav_control-14]: started with pid [23130][0m
+[1mprocess[hexacopter0/high_level_control-15]: started with pid [23141][0m
+[1mprocess[hexacopter0/uav_localiser-16]: started with pid [23159][0m
+[1mprocess[hexacopter1/uav_perception-17]: started with pid [23172][0m
+[1mprocess[hexacopter1/uav_control-18]: started with pid [23186][0m
+[1mprocess[hexacopter1/high_level_control-19]: started with pid [23194][0m
+[1mprocess[hexacopter1/uav_localiser-20]: started with pid [23197][0m
+[1mprocess[hexacopter2/ua[0m[ INFO] [1487285886.694962967]: FCU URL: udp://localhost:14840@localhost:14857[0m
+[33m[ WARN] [1487285886.695737972]: init: message from ASLUAV, MSG-ID 201 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.695964360]: init: message from autoquad, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.695982475]: init: message from autoquad, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696197042]: init: message from matrixpilot, MSG-ID 150 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696213642]: init: message from matrixpilot, MSG-ID 151 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696227705]: init: message from matrixpilot, MSG-ID 152 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696238838]: init: message from matrixpilot, MSG-ID 153 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696251470]: init: message from matrixpilot, MSG-ID 155 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696264414]: init: message from matrixpilot, MSG-ID 156 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696275308]: init: message from matrixpilot, MSG-ID 157 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696289291]: init: message from matrixpilot, MSG-ID 158 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696299333]: init: message from matrixpilot, MSG-ID 170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696307756]: init: message from matrixpilot, MSG-ID 171 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696317687]: init: message from matrixpilot, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696329026]: init: message from matrixpilot, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696341365]: init: message from matrixpilot, MSG-ID 174 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696351300]: init: message from matrixpilot, MSG-ID 175 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696360939]: init: message from matrixpilot, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696372976]: init: message from matrixpilot, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696385241]: init: message from matrixpilot, MSG-ID 178 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696395398]: init: message from matrixpilot, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696405632]: init: message from matrixpilot, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696418569]: init: message from matrixpilot, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696431113]: init: message from matrixpilot, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696441018]: init: message from matrixpilot, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696451097]: init: message from matrixpilot, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696463175]: init: message from matrixpilot, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696476034]: init: message from matrixpilot, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696675281]: init: message from paparazzi, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696692315]: init: message from paparazzi, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696705481]: init: message from paparazzi, MSG-ID 182 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696716472]: init: message from paparazzi, MSG-ID 183 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696727679]: init: message from paparazzi, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696924797]: init: message from slugs, MSG-ID Vertex (0) -30, -45
+Vertex (1) -30, 45
+Vertex (2) 30, 45
+Vertex (3) 30, -45
+Vertex (0) -30, -45
+Vertex (1) -30, 45
+Vertex (2) 30, 45
+Vertex (3) 30, -45
+Vertex (0) -30, -45
+Vertex (1) -30, 45
+Vertex (2) 30, 45
+Vertex (3) 30, -45
+170 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696969217]: init: message from slugs, MSG-ID 172 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696982041]: init: message from slugs, MSG-ID 173 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696990810]: init: message from slugs, MSG-ID 176 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.696999853]: init: message from slugs, MSG-ID 177 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697011713]: init: message from slugs, MSG-ID 179 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697021312]: init: message from slugs, MSG-ID 180 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697030961]: init: message from slugs, MSG-ID 181 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697042623]: init: message from slugs, MSG-ID 184 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697052709]: init: message from slugs, MSG-ID 185 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697062889]: init: message from slugs, MSG-ID 186 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697077011]: init: message from slugs, MSG-ID 188 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697089415]: init: message from slugs, MSG-ID 191 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697099904]: init: message from slugs, MSG-ID 192 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697111867]: init: message from slugs, MSG-ID 193 ignored! Table has different entry.[0m
+[33m[ WARN] [1487285886.697125668]: init: message from slugs, MSG-ID 194 ignored! Table has different entry.[0m
+[0m[ INFO] [1487285886.697719712]: udp0: Bind address: 127.0.0.1:14840[0m
+[0m[ INFO] [1487285886.697789984]: udp0: Remote address: 127.0.0.1:14857[0m
+[0m[ INFO] [1487285886.697879892]: GCS bridge disabled[0m
+[0m[ INFO] [1487285886.911467925]: Plugin 3dr_radio loaded[0m
+[0m[ INFO] [1487285886.955428680]: Plugin 3dr_radio initialized[0m
+[0m[ INFO] [1487285886.955549182]: Plugin actuator_control loaded[0m
+[0m[ INFO] [1487285887.042311718]: Plugin actuator_control initialized[0m
+[0m[ INFO] [1487285887.042444579]: Plugin altitude loaded[0m
+[0m[ INFO] [1487285887.080267403]: Plugin altitude initialized[0m
+[0m[ INFO] [1487285887.080384479]: Plugin command loaded[0m
+[0m[ INFO] [1487285887.148955155]: Plugin command initialized[0m
+[0m[ INFO] [1487285887.149062416]: Plugin ftp loaded[0m
+[0m[ INFO] [1487285887.212894726]: Plugin ftp initialized[0m
+[0m[ INFO] [1487285887.212992912]: Plugin global_position loaded[0m
+[0m[ INFO] [1487285887.270722018]: Plugin global_position initialized[0m
+[0m[ INFO] [1487285887.270864369]: Plugin hil_actuator_controls loaded[0m
+[0m[ INFO] [1487285887.274581072]: Plugin hil_actuator_controls initialized[0m
+[0m[ INFO] [1487285887.274728481]: Plugin hil_controls loaded[0m
+[0m[ INFO] [1487285887.277766327]: Plugin hil_controls initialized[0m
+[0m[ INFO] [1487285887.277886478]: Plugin imu_pub loaded[0m
+[0m[ INFO] [1487285887.321974586]: Plugin imu_pub initialized[0m
+[0m[ INFO] [1487285887.322091975]: Plugin local_position loaded[0m
+[0m[ INFO] [1487285887.358754135]: Plugin local_position initialized[0m
+[0m[ INFO] [1487285887.358871432]: Plugin manual_control loaded[0m
+[0m[ INFO] [1487285887.362313552]: Plugin manual_control initialized[0m
+[0m[ INFO] [1487285887.362437556]: Plugin param loaded[0m
+[0m[ INFO] [1487285887.373381820]: Plugin param initialized[0m
+[0m[ INFO] [1487285887.373511118]: Plugin rc_io loaded[0m
+[0m[ INFO] [1487285887.391150264]: Plugin rc_io initialized[0m
+[0m[ INFO] [1487285887.391189216]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1487285887.391306554]: Plugin setpoint_accel loaded[0m
+[0m[ INFO] [1487285887.401662420]: Plugin setpoint_accel initialized[0m
+[0m[ INFO] [1487285887.401742102]: Plugin setpoint_attitude loaded[0m
+[0m[ INFO] [1487285887.430119157]: Plugin setpoint_attitude initialized[0[0m[ INFO] [1487285889.638655919]: System Checks in progress...[0m
+[0m[ INFO] [1487285889.639178792]: Standing By.[0m
+[0m[ INFO] [1487285889.639516844]: Taking Off[0m
+[0m[ INFO] [1487285889.640982401]: System Checks in progress...[0m
+[0m[ INFO] [1487285889.641451747]: Standing By.[0m
+[0m[ INFO] [1487285889.641759362]: Taking Off[0m
+[0m[ INFO] [1487285889.647943166]: System Checks in progress...[0m
+[0m[ INFO] [1487285889.648412694]: Standing By.[0m
+[0m[ INFO] [1487285889.648736785]: Taking Off[0m
+[0m[ INFO] [1487285886.970941095]: Mavros Adapter: Autopilot set to PX4.[0m
+[0m[ INFO] [1487285886.970461443]: Mavros Adapter: Autopilot set to PX4.[0m
+18446744073709551587 WARNING: setRealtimeSched failed (not run as root?)
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [dataman] Unkown restart, data manager file 'rootfs/fs/microsd/dataman' size is 11797680 bytes
+INFO  [platforms__posix__drivers__ledsim] LED::init
+INFO  [platforms__posix__drivers__ledsim] LED::init
+WARN  [simulator] bind failed
+
+
+Exiting...
+spawn_model script started
+[INFO] [1487285885.944868, 0.000000]: Loading model xml from file
+[INFO] [1487285885.945332, 0.000000]: Waiting for service /gazebo/spawn_sdf_model
+m
+[0m[ INFO] [1487285887.430245264]: Plugin setpoint_position loaded[0m
+[0m[ INFO] [1487285887.435221372]: Plugin setpoint_position initialized[0m
+[0m[ INFO] [1487285887.435291297]: Plugin setpoint_raw loaded[0m
+[0m[ INFO] [1487285887.443793655]: Plugin setpoint_raw initialized[0m
+[0m[ INFO] [1487285887.443871729]: Plugin setpoint_velocity loaded[0m
+[0m[ INFO] [1487285887.446158034]: Plugin setpoint_velocity initialized[0m
+[0m[ INFO] [1487285887.446241518]: Plugin sys_status loaded[0m
+[0m[ INFO] [1487285887.451390380]: Plugin sys_status initialized[0m
+[0m[ INFO] [1487285887.451469541]: Plugin sys_time loaded[0m
+[0m[ INFO] [1487285887.454130689]: Plugin sys_time initialized[0m
+[0m[ INFO] [1487285887.454207590]: Plugin vfr_hud loaded[0m
+[0m[ INFO] [1487285887.455216675]: Plugin vfr_hud initialized[0m
+[0m[ INFO] [1487285887.455291159]: Plugin waypoint loaded[0m
+[0m[ INFO] [1487285887.459104054]: Plugin waypoint initialized[0m
+[0m[ INFO] [1487285887.459137061]: Autostarting mavlink via USB on PX4[0m
+[0m[ INFO] [1487285887.459166996]: Built-in SIMD instructions: SSE, SSE2[0m
+[0m[ INFO] [1487285887.459179399]: Built-in MAVLink package version: 2016.12.12[0m
+[0m[ INFO] [1487285887.459196400]: Known MAVLink dialects: common ardupilotmega ASLUAV autoquad matrixpilot paparazzi slugs standard uAvionix ualberta[0m
+[0m[ INFO] [1487285887.459209136]: MAVROS started. MY ID 1.240, TARGET ID 1.1[0m
+[0m[ INFO] [1487285886.664275204]: Mavros Adapter: Autopilot set to PX4.[0m
+18446744073709551557 WARNING: setRealtimeSched failed (not run as root?)
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [dataman] Unkown restart, data manager file 'rootfs/fs/microsd/dataman' size is 11797680 bytes
+INFO  [platforms__posix__drivers__ledsim] LED::init
+INFO  [platforms__posix__drivers__ledsim] LED::init
+WARN  [simulator] bind failed
+
+
+Exiting...
+spawn_model script started
+[INFO] [1487285885.096459, 0.000000]: Loading model xml from file
+[INFO] [1487285885.096968, 0.000000]: Waiting for service /gazebo/spawn_sdf_model
+spawn_model script started
+[INFO] [1487285885.451489, 0.000000]: Loading model xml from file
+[INFO] [1487285885.451906, 0.000000]: Waiting for service /gazebo/spawn_sdf_model
+18446744073709551570 WARNING: setRealtimeSched failed (not run as root?)
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [dataman] Unkown restart, data manager file 'rootfs/fs/microsd/dataman' size is 11797680 bytes
+INFO  [platforms__posix__drivers__ledsim] LED::init
+INFO  [platforms__posix__drivers__ledsim] LED::init
+WARN  [simulator] bind failed
+
+
+Exiting...
+m
+[0m[ INFO] [1487285884.962714902]: Plugin setpoint_position loaded[0m
+[0m[ INFO] [1487285884.968571918]: Plugin setpoint_position initialized[0m
+[0m[ INFO] [1487285884.968653892]: Plugin setpoint_raw loaded[0m
+[0m[ INFO] [1487285884.984863507]: Plugin setpoint_raw initialized[0m
+[0m[ INFO] [1487285884.984959962]: Plugin setpoint_velocity loaded[0m
+[0m[ INFO] [1487285884.987925181]: Plugin setpoint_velocity initialized[0m
+[0m[ INFO] [1487285884.988011485]: Plugin sys_status loaded[0m
+[0m[ INFO] [1487285885.000702446]: Plugin sys_status initialized[0m
+[0m[ INFO] [1487285885.000886437]: Plugin sys_time loaded[0m
+[0m[ INFO] [1487285885.005515832]: Plugin sys_time initialized[0m
+[0m[ INFO] [1487285885.005688767]: Plugin vfr_hud loaded[0m
+[0m[ INFO] [1487285885.007455615]: Plugin vfr_hud initialized[0m
+[0m[ INFO] [1487285885.007562813]: Plugin waypoint loaded[0m
+[0m[ INFO] [1487285885.016659118]: Plugin waypoint initialized[0m
+[0m[ INFO] [1487285885.016702883]: Autostarting mavlink via USB on PX4[0m
+[0m[ INFO] [1487285885.016742933]: Built-in SIMD instructions: SSE, SSE2[0m
+[0m[ INFO] [1487285885.016760256]: Built-in MAVLink package version: 2016.12.12[0m
+[0m[ INFO] [1487285885.016784606]: Known MAVLink dialects: common ardupilotmega ASLUAV autoquad matrixpilot paparazzi slugs standard uAvionix ualberta[0m
+[0m[ INFO] [1487285885.016802558]: MAVROS started. MY ID 1.240, TARGET ID 1.1[0m
+m
+[0m[ INFO] [1487285885.195740811]: Plugin setpoint_position loaded[0m
+[0m[ INFO] [1487285885.210836899]: Plugin setpoint_position initialized[0m
+[0m[ INFO] [1487285885.210921181]: Plugin setpoint_raw loaded[0m
+[0m[ INFO] [1487285885.221416574]: Plugin setpoint_raw initialized[0m
+[0m[ INFO] [1487285885.221521701]: Plugin setpoint_velocity loaded[0m
+[0m[ INFO] [1487285885.224951117]: Plugin setpoint_velocity initialized[0m
+[0m[ INFO] [1487285885.225102822]: Plugin sys_status loaded[0m
+[0m[ INFO] [1487285885.232551348]: Plugin sys_status initialized[0m
+[0m[ INFO] [1487285885.232669683]: Plugin sys_time loaded[0m
+[0m[ INFO] [1487285885.236159037]: Plugin sys_time initialized[0m
+[0m[ INFO] [1487285885.236249925]: Plugin vfr_hud loaded[0m
+[0m[ INFO] [1487285885.237379426]: Plugin vfr_hud initialized[0m
+[0m[ INFO] [1487285885.237451968]: Plugin waypoint loaded[0m
+[0m[ INFO] [1487285885.241154981]: Plugin waypoint initialized[0m
+[0m[ INFO] [1487285885.241185567]: Autostarting mavlink via USB on PX4[0m
+[0m[ INFO] [1487285885.241217385]: Built-in SIMD instructions: SSE, SSE2[0m
+[0m[ INFO] [1487285885.241237724]: Built-in MAVLink package version: 2016.12.12[0m
+[0m[ INFO] [1487285885.241262398]: Known MAVLink dialects: common ardupilotmega ASLUAV autoquad matrixpilot paparazzi slugs standard uAvionix ualberta[0m
+[0m[ INFO] [1487285885.241276721]: MAVROS started. MY ID 1.240, TARGET ID 1.1[0m
+INFO: Graph has been added
+Reading dot data from /home/usl/cmsvt_mbzirc/devel/share/decision_making_tutorial/graphs/Challenge3.dot
+INFO: Graph has been added
+INFO: Graph has been added
+v_perception-21]: started with pid [23207][0m
+[1mprocess[hexacopter2/uav_control-22]: started with pid [23227][0m
+[1mprocess[hexacopter2/high_level_control-23]: started with pid [23238][0m
+[1mprocess[hexacopter2/uav_localiser-24]: started with pid [23253][0m
+[1mprocess[hexacopter0/stateMachChal3-25]: started with pid [23263][0m
+[1mprocess[hexacopter1/stateMachChal3-26]: started with pid [23267][0m
+[1mprocess[hexacopter2/stateMachChal3-27]: started with pid [23276][0m
+[1mprocess[rqt-28]: started with pid [23283][0m
+[1mprocess[hexacopter0/perspective_image_view-29]: started with pid [23291][0m
+[1mprocess[hexacopter0/perspective_image_view1-30]: started with pid [23300][0m
+[1mprocess[hexacopter0/target_display-31]: started with pid [23304][0m
+[1mprocess[hexacopter1/perspective_image_view-32]: started with pid [23324][0m
+[1mprocess[hexacopter1/target_display-33]: started with pid [23348][0m
+[1mprocess[hexacopter2/perspective_image_view-34]: started with pid [23355][0m
+[1mprocess[hexacopter2/target_display-35]: started with pid [23358][0m
+[hexacopter2/target_display-35] killing on exit
+[hexacopter2/perspective_image_view-34] killing on exit
+[hexacopter1/target_display-33] killing on exit
+[hexacopter1/perspective_image_view-32] killing on exit
+[hexacopter0/target_display-31] killing on exit
+[hexacopter0/perspective_image_view1-30] killing on exit
+[hexacopter0/perspective_image_view-29] killing on exit
+[rqt-28] killing on exit
+[hexacopter2/stateMachChal3-27] killing on exit
+[hexacopter1/stateMachChal3-26] killing on exit
+[hexacopter0/stateMachChal3-25] killing on exit
+[hexacopter2/uav_localiser-24] killing on exit
+[hexacopter2/uav_perception-21] killing on exit
+[hexacopter2/uav_control-22] killing on exit
+[hexacopter2/high_level_control-23] killing on exit
+[hexacopter1/uav_localiser-20] killing on exit
+[hexacopter1/high_level_control-19] killing on exit
+[hexacopter1/uav_control-18] killing on exit
+[hexacopter1/uav_perception-17] killing on exit
+[hexacopter0/uav_localiser-16] killing on exit
+[hexacopter0/high_level_control-15] killing on exit
+[hexacopter0/uav_perception-13] killing on exit
+[hexacopter0/uav_control-14] killing on exit
+[environment_3-12] killing on exit
+[hexacopter2/mavros-11] killing on exit
+[hexacopter2/vehicle_spawn_usl_G750JW_22420_3842036683494905884-10] killing on exit
+[hexacopter2/sitl_hexacopter2-9] killing on exit
+[hexacopter1/mavros-8] killing on exit
+[hexacopter1/vehicle_spawn_usl_G750JW_22420_5935506499995800714-7] killing on exit
+[hexacopter1/sitl_hexacopter1-6] killing on exit
+[hexacopter0/mavros-5] killing on exit
+[hexacopter0/vehicle_spawn_usl_G750JW_22420_8173484557781072434-4] killing on exit
+[hexacopter0/sitl_hexacopter0-3] killing on exit
+[gazebo_gui-2] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+ff[0m
+[33m[ WARN] [1487285885.522071057]: Shutdown request received.[0m
+[33m[ WARN] [1487285885.522110706]: Reason given for shutdown: [new node registered with same name][0m
+[0m[ INFO] [1487285851.233361984]: System Checks in progress...[0m
+[0m[ INFO] [1487285851.233841863]: Standing By.[0m
+[0m[ INFO] [1487285851.234168943]: Taking Off[0m
+[33m[ WARN] [1487285885.528214448]: Shutdown request received.[0m
+[33m[ WARN] [1487285885.528250072]: Reason given for shutdown: [new node registered with same name][0m

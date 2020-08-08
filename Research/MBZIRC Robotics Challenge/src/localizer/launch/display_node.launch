@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Launch RVIZ -->
+  <node name="rviz" pkg="rviz" type="rviz"/>
+
+  <!-- Launch map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/victor/maps/mbzirc_arena.yaml" output="screen"/>
+
+  <!-- Include rtk_simulator launch -->
+  <include file="$(find localizer)/launch/rtk_simulator.launch">
+    <arg name="gaussian_error_variance" value="0.001"/>
+  </include>
+
+  <!-- Launch image_tf node -->
+  <node name="image_tf_node" pkg="localizer" type="image_tf_node" args="image_tf_node" output="screen"/>
+
+  <!-- Launch display_node -->
+  <node name="display_node" pkg="localizer" type="display_node" output="screen"/>
+
+  <!-- Display images-->
+  <node name="map_view_2d" pkg="image_view" type="image_view">
+    <remap from="image" to="/localizer/uav_pose_2D"/>
+  </node>
+  <node name="pan_tilt_image" pkg="image_view" type="image_view">
+    <remap from="image" to="/hexacopter/pan_tilt_camera/image_raw"/>
+  </node>
+  <node name="transformed_image" pkg="image_view" type="image_view">
+    <remap from="image" to="/localizer/tf_image"/>
+  </node>
+  <node name="fisheye_image" pkg="image_view" type="image_view">
+    <remap from="image" to="/hexacopter/fisheye_camera/image_raw"/>
+  </node>
+</launch>

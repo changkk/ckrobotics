@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="name" value="hexacopter0" />
+  <arg name="challenge" value="3" />
+  <arg name="target_height" value="0.8" />
+
+  <include file="$(find mbzirc_system)/launch/hexacopter.launch">
+    <arg name="name" value="$(arg name)" />
+    <arg name="challenge" value="$(arg challenge)" />
+    <arg name="target_height" value="$(arg target_height)" />
+  </include>
+</launch>

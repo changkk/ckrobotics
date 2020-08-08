@@ -1,0 +1,7 @@
+<launch>
+
+<group ns="hexacopter0">
+    <node type="psuedo_truck_follower" pkg="psuedo_truck_follower" name="psuedo_truck_follower" >
+    </node>
+</group>
+</launch>

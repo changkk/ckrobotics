@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="uav_name0" default="hexacopter0" />
+  <arg name="uav_name1" default="hexacopter1" />
+  <arg name="uav_name2" default="hexacopter2" />
+
+  <group ns="$(arg uav_name0)">
+    <node name="uav_controller" pkg="control" type="uav_controller" output="screen" />
+    <node name="uav_perception" pkg="perception" type="challenge3_perception" output="screen" />
+  </group>
+
+  <group ns="$(arg uav_name1)">
+    <node name="uav_controller" pkg="control" type="uav_controller" output="screen" />
+  </group>
+
+  <group ns="$(arg uav_name2)">
+    <node name="uav_controller" pkg="control" type="uav_controller" output="screen" />
+  </group>
+</launch>

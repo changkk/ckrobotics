@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="governor" default="governor" />
+  <arg name="target_generator" default="psuedo_target" />
+  <arg name="starter" default="start_script" />
+
+
+ <group ns="$(arg governor)">
+    <node name="governor" pkg="governor" type="governor" output="screen"/>
+  </group>
+
+
+  <node name= "psuedo_target_generator_publisher" pkg="governor" type="target_generatorandpublisher" output="screen" />
+
+
+  <group ns="$(arg starter)">
+    <node name= "start_script" pkg="governor" type="start_script.sh" output="screen" />
+  </group>
+
+
+</launch>
+ 
+

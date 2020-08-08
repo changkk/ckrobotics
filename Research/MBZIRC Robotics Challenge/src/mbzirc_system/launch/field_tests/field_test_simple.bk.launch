@@ -1,0 +1,36 @@
+<launch>
+  <arg name="fcu_url" default="serial:///dev/ttyUSB0:57600" />
+  <arg name="gcs_url" default="udp://localhost:14556@localhost:14540" />
+  <arg name="tgt_system" default="1" />
+  <arg name="tgt_component" default="50" />
+
+  <group ns="hexacopter">
+    <node name="mavros" pkg="mavros" type="mavros_node" output="screen">
+      <param name="fcu_url" value="$(arg fcu_url)" />
+      <param name="gcs_url" value="$(arg gcs_url)" />
+      <param name="target_system_id" value="$(arg tgt_system)" />
+      <param name="target_component_id" value="$(arg tgt_component)" />
+
+      <!-- <rosparam command="load" file="$(find mavros)/launch/px4_blacklist.yaml" /> -->
+
+      <!-- enable heartbeat send and reduce timeout -->
+      <param name="conn_heartbeat" value="5.0" />
+      <param name="conn_timeout" value="5.0" />
+      <!-- automatically start mavlink on USB -->
+      <param name="startup_px4_usb_quirk" value="true" />
+    </node>
+
+    <node name="camera" pkg="usb_cam" type="usb_cam_node">
+      <param name="video_device" value="/dev/video0" />
+      <param name="image_width" value="800" />
+      <param name="image_height" value="600" />
+      <param name="pixel_format" value="mjpeg" />
+      <param name="framerate" value="30" />
+      <param name="camera_frame_id" value="webcam" />
+    </node>
+
+    <node name="viewer" pkg="image_view" type="image_view">
+      <remap from="image" to="/camera/image_raw" />
+    </node>
+  </group>
+</launch>

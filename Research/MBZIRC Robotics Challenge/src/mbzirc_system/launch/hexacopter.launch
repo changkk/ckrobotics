@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="name" default="hexacopter" />
+  <arg name="challenge" default="1" />
+  <arg name="target_height" default="1.0" />
+  <arg name="simulation" default="false" />
+  <arg name="location" default="mbzirc" />
+  <arg name="perspective_camera" default="perspective_camera/image_raw" />
+  <arg name="fisheye_camera" default="fisheye_camera/image_raw" />
+  <arg name="fisheye_calibration" default="/etc/camera_info/fisheye_camera.txt" />
+  <arg name="odometry_topic" default="localizer/global_odom" />
+  <arg name="pluginlists_yaml" default="$(find mbzirc_system)/config/apm_pluginlists.yaml" />
+  <arg name="config_yaml" default="$(find mbzirc_system)/config/apm_config_$(arg name).yaml" />
+  <arg name="fcu_url" default="serial:///dev/ttyTHS2:921600" />
+  <arg name="gcs_url" default="udp://localhost:14556@localhost:14540" />
+  <arg name="tgt_system" default="1" />
+  <arg name="tgt_component" default="50" />
+  <arg name="autopilot" value="$(eval 'px4' if arg('simulation') else 'apm')" />
+  <arg name="sub_rtkgps_topic" value="$(eval 'localizer/rtk_odom' if arg('simulation') else 'gps/rtkfix')" />
+
+  <group ns="$(arg name)">
+    <node name="uav_control" pkg="control" type="mavros_control" output="screen">
+      <param name="odometry_topic" value="$(arg odometry_topic)" />
+      <param name="autopilot" value="$(arg autopilot)" />
+      <param name="simulation" value="$(arg simulation)" />
+    </node>
+    <node name="pose_sync_node" pkg="localizer" type="pose_sync_node" args="pose_sync_node" output="screen">
+      <param name="pub_odom_topic" value="localizer/gps_imu_odom" />
+      <param name="rtk_reciever_frame_id" value="$(arg name)_rtk_reciever" />
+      <param name="arm_frame_id" value="$(arg name)_arm_origin" />
+      <param name="baselink_frame_id" value="$(arg name)_base_link" />
+      <param name="sub_rtkgps_topic" value="$(arg sub_rtkgps_topic)" />
+    </node>
+    <node name="baselink_odom_pub" pkg="localizer" type="baselink_odom_pub" args="baselink_odom_pub" output="screen">
+      <param name="baselink_frame_id" value="$(arg name)_base_link" />
+      <param name="global_map_id" value="global_map" />
+    </node>
+    <node name="lidar_parser" pkg="rangefinder_parser" type="lidar_parser" output="screen" />
+
+<!-->    <include file="$(find localizer)/launch/localizer.launch">
+      <arg name="uav_name" value="$(arg name)"/>
+    </include>
+    <include file="$(find localizer)/launch/fisheye.launch">
+      <arg name="uav_name" value="$(arg name)"/>
+    </include>
+-->
+    <!-- Challenge 1 -->
+    <group if="$(eval arg('challenge') == 1)">
+      <include file="$(find mbzirc_system)/launch/pid_ch1.launch" />
+      <!-- <node name="uav_perception" pkg="perception" type="quick_drop" output="screen"> -->
+    <!--    <param name="fisheye_calibration" value="$(arg fisheye_calibration)" /> -->
+     <!--> </node> -->
+    </group>
+    <!-- Challenge 3 -->
+    <group if="$(eval arg('challenge') == 3)">
+      <include file="$(find mbzirc_system)/launch/pid.launch" />
+      <node name="uav_perception" pkg="perception" type="challenge3_perception" output="screen">
+        <param name="perspective_camera" value="$(arg perspective_camera)" />
+        <param name="fisheye_camera" value="$(arg fisheye_camera)" />
+        <param name="fisheye_calibration" value="$(arg fisheye_calibration)" />
+        <param name="odometry_topic" value="$(arg odometry_topic)" />
+        <param name="location" value="$(arg location)" />
+      </node>
+      <node name="high_level_control" pkg="control" type="high_level_control" output="screen">
+        <param name="name" value="$(arg name)" />
+        <param name="target_height" value="$(arg target_height)" />
+      </node>
+      <!-- Hardware -->
+      <group unless="$(arg simulation)">
+        <node name="contact_node" pkg="contact_sensor" type="contact_node" />
+      </group>
+    </group>
+    <!-- Simulation -->
+    <group if="$(arg simulation)">
+      <node name="uav_localiser_rtk_sim" pkg="localizer" type="rtk_simulator_node" args="uav_localiser_rtk_sim" output="screen">
+        <param name="uav_pose/publish_topic" value="localizer/rtk_pose" />
+        <param name="uav_odom/publish_topic" value="localizer/rtk_odom" />
+        <param name="uav_gazebo_model_name" value="$(arg name)" />
+      </node>
+    </group>
+    <!-- Hardware -->
+    <group unless="$(arg simulation)">
+      <node name="piksi_node" pkg="swiftnav_piksi" type="piksi_node" output="screen">
+        <param name="port" value="/dev/ttyUSB0" />
+      </node>
+      <node name="mavros" pkg="mavros" type="mavros_node" output="screen">
+        <param name="fcu_url" value="$(arg fcu_url)" />
+        <param name="gcs_url" value="$(arg gcs_url)" />
+        <param name="target_system_id" value="$(arg tgt_system)" />
+        <param name="target_component_id" value="$(arg tgt_component)" />
+        <param name="conn_heartbeat" value="5.0" />
+        <param name="conn_timeout" value="5.0" />
+        <param name="startup_px4_usb_quirk" value="true" />
+        <rosparam command="load" file="$(arg pluginlists_yaml)" />
+        <rosparam command="load" file="$(arg config_yaml)" />
+      </node>
+<!--
+      <node name="fisheye_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video_fisheye" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap" />
+      </node>
+      <node name="perspective_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video_perspective" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap" />
+        <param name="camera_info_url" value="file:///etc/camera_info/perspective_camera.yaml"/>
+      </node>
+-->
+    </group>
+  </group>
+</launch>

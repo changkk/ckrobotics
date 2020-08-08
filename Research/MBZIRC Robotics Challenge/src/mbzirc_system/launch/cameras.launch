@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<launch> 
+  <arg name="ns"/>
+
+  <group ns="$(arg ns)">
+    <node name="fisheye_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video_fisheye" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap" />
+      </node>
+      <node name="perspective_camera" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="video_device" value="/dev/video_perspective" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap" />
+        <param name="camera_info_url" value="file:///etc/camera_info/perspective_camera.yaml"/>
+    </node>
+  </group>
+</launch> 

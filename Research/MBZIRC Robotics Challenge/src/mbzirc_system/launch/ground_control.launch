@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Options: mbzirc, kentland, gazebo -->
+  <arg name="location" default="gazebo" />
+
+  <rosparam command="load" file="$(find mbzirc_system)/config/arena/$(arg location).yml" />
+
+  <!-- Launch OCS -->
+  <node name="ocs" pkg="ocs" type="ocs" output="screen" />
+
+  <!-- Launch RTK transform -->
+  <group if="$(eval arg('location') == 'gazebo')">
+    <node name="global_map_rtk_gps" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 global_map gps 100" />
+  </group>
+  <group if="$(eval arg('location') == 'kentland')">
+    <node name="global_map_rtk_gps" pkg="tf" type="static_transform_publisher" args="-14.723 -33.01 -1.296 -1.465 0 0 gps global_map 100" />
+  </group>
+
+  <!-- Launch views -->
+  <node name="ocs_perception_monitor_perspective" type="image_view" pkg="image_view">
+    <remap from="image" to="/hexacopter0/perspective_camera/image_raw_ocs" />
+  </node>
+  <node name="ocs_perception_monitor_fisheye" type="image_view" pkg="image_view">
+    <remap from="image" to="/hexacopter0/fisheye_camera/image_raw_ocs" />
+  </node>
+</launch>

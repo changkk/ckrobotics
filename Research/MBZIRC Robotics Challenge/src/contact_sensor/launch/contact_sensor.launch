@@ -1,0 +1,9 @@
+<launch>
+  <arg name="uav_name0" default="hexacopter" />
+
+  <group ns="$(arg uav_name0)">
+
+  <node name="contact_node" pkg="contact_sensor" type="contact_node"/>
+
+</group>
+</launch>

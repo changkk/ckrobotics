@@ -1,0 +1,26 @@
+<!-- -->
+
+<launch>
+  <arg name="uav_name" default="hexacopter"/>
+
+  <node name="perspective_camera_image_proc" pkg="image_proc" type="image_proc" ns="/$(arg uav_name)/perspective_camera" />
+
+  <node pkg="localizer" type="fisheye_correction_node" name="fisheye_correction_node" output="screen" args="fisheye_correction_node" >
+    <!--<param name="sub_pcimage_topic" value="/hexacopter/perspective_camera/image_rect_color" />  -->
+    <!--<param name="/sub_image_topic" value="/usb_cam/image_raw" /> -->
+    <!--<param name="sub_feimage_topic" value="/hexacopter/fisheye_camera/image_raw" />-->
+    <!--<param name="sub_uavpose_topic" value="/hexacopter/mavros/local_position/odom" /> -->
+    
+    <remap from="fisheye_camera/image_raw" to="/$(arg uav_name)/fisheye_camera/image_raw" />
+    <remap from="perspective_camera/image_raw" to="/$(arg uav_name)/perspective_camera/image_raw" />
+    <remap from="uav_pose" to="/$(arg uav_name)/mavros/local_position/odom" />
+    <remap from="rtkfix" to="/$(arg uav_name)/gps/rtkfix" />
+    <!--/hexacopter/fisheye_camera/image_raw-->
+    <!--/usb_cam/image_raw -->
+
+    <param name="enable_fisheye_correction" type="bool" value="false"/>
+    <param name="calib_data_file" value="$(find localizer)/launch/calib_results.txt"/>
+    <param name="fisheye_service_topic" value="/$(arg uav_name)/localizer/fisheye_srv"/>
+    <param name="laser_topic" value="/$(arg uav_name)/localizer/scanpos"/>
+  </node>
+</launch>

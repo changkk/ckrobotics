@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Launch arena -->
+  <include file="$(find mbzirc_gazebo)/launch/support/arena.launch" />
+
+  <!-- Launch Truck -->
+  <group ns="truck">
+    <arg name="truck_x" default="0.0" />
+    <arg name="truck_y" default="0.0" />
+    <arg name="truck_Y" default="0.0" />
+    <arg name="truck_sdf" default="$(find mbzirc_gazebo)/models/truck/model.sdf" />
+    <arg name="truck_name" default="truck" />
+    <node name="$(anon vehicle_spawn)" output="screen" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(arg truck_sdf) -model $(arg truck_name) -x $(arg truck_x) -y $(arg truck_y) -Y $(arg truck_Y)" />
+  </group>
+</launch>

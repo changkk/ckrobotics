@@ -1,0 +1,7 @@
+<launch>
+  <group>
+    <node name="lidar_parser" pkg="rangefinder_parser" type="lidar_parser" output="screen">
+
+    </node>
+  </group>
+</launch>

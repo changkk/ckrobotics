@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="start_x1" default="47.0" />
+  <arg name="start_y1" default="-20.0" />
+
+  <!-- Launch Husky -->
+  <include file="$(find mbzirc_gazebo)/launch/support/robot.launch">
+    <arg name="name" value="ugv2"/>
+    <arg name="model" value="$(find mbzirc_gazebo)/models/husky/model.sdf"/>
+    <arg name="x" value="$(arg start_x1)" />
+    <arg name="y" value="$(arg start_y1)" />
+  </include>
+
+</launch>

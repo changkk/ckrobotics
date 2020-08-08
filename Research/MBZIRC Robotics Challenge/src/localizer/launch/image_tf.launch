@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="node_name" default="image_tf_node"/>
+  <arg name="camera_image_topic" default="/hexacopter/pan_tilt_camera/image_raw"/>
+  <arg name="camera_info_topic" default="/hexacopter/pan_tilt_camera/camera_info"/>
+  <arg name="camera_pose_topic" default="/gazebo/model_states"/>
+  <arg name="camera_transformed_image_topic" default="/localizer/tf_image"/>
+  <arg name="uav_imu_topic" default="/hexacopter/mavros/imu/data"/>
+  <arg name="uav_gazebo_model_name" default="hexacopter"/>
+  <arg name="edge_det_low_t" default="250"/>
+  <arg name="edge_det_high_t" default="750"/>
+  <arg name="tf_height" default="30.0"/>
+
+  <node name="$(arg node_name)" pkg="localizer" type="image_tf_node" args="$(arg node_name)">
+    <param name="camera/image_topic" value="$(arg camera_image_topic)"/>
+    <param name="camera/info_topic" value="$(arg camera_info_topic)"/>
+    <param name="camera/psoe_topic" value="$(arg camera_pose_topic)"/>
+    <param name="camera/transformed_image_topic" value="$(arg camera_transformed_image_topic)"/>
+    <param name="uav/imu_topic" value="$(arg uav_imu_topic)"/>
+    <param name="edge_det/low_t" value="$(arg edge_det_low_t)"/>
+    <param name="edge_det/hight_t" value="$(arg edge_det_high_t)"/>
+    <param name="tf_height" value="$(arg tf_height)"/>
+  </node>
+</launch>

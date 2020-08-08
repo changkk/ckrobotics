@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="name" default="hexacopter" />
+  <arg name="x" default="40.0" />
+  <arg name="y" default="-40.0" />
+
+  <!-- Launch UAV with MAVROS -->
+  <include file="$(find mbzirc_gazebo)/launch/support/uav_with_mavros.launch">
+    <arg name="name" value="$(arg name)" />
+    <arg name="fcu_url" value="udp://localhost:14540@localhost:14557" />
+    <arg name="x" value="$(arg x)" />
+    <arg name="y" value="$(arg y)" />
+  </include>
+
+  <group ns="$(arg name)">
+    <node name="mavros_control" pkg="control" type="mavros_control" output="screen" />
+
+    <node name="localizer" pkg="localizer" type="rtk_simulator_node" output="screen" />
+
+    <node name="pan_tilt_perception" pkg="perception" type="pan_tilt_perception" output="screen" />
+
+    <node name="truck_search_and_track" pkg="control" type="truck_search_and_track" output="screen">
+      <param name="rate" value="20" />
+    </node>
+  </group>
+</launch>

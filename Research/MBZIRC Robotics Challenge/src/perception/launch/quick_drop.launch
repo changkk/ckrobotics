@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="quick_drop" pkg="perception" type="quick_drop" output="screen"/>
+
+</launch>

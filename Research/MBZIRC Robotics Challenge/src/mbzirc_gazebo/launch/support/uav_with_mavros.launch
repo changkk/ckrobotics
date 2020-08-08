@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="name" default="hexacopter" />
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="0.01" />
+  <arg name="R" default="0" />
+  <arg name="P" default="0" />
+  <arg name="Y" default="3.1415927" />
+  <arg name="sdf" default="$(find mbzirc_gazebo)/models/hexacopter/model.sdf" />
+  <arg name="rcS" default="$(find mbzirc_gazebo)/models/hexacopter/config/$(arg name)" />
+  <arg name="fcu_url" default="udp://localhost:14540@localhost:14557" />
+  <arg name="pluginlists_yaml" default="$(find mbzirc_system)/config/px4_pluginlists.yaml" />
+  <arg name="config_yaml" default="$(find mbzirc_system)/config/px4_config_$(arg name).yaml" />
+  <arg name="gcs_url" default="" />
+  <arg name="tgt_system" default="1" />
+  <arg name="tgt_component" default="1" />
+  <arg name="log_output" default="screen" />
+
+  <group ns="$(arg name)">
+    <node name="sitl_$(arg name)" pkg="px4" type="px4" output="screen"
+        args="$(find px4) $(arg rcS)">
+    </node>
+    <node name="$(anon vehicle_spawn)" output="screen" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(arg sdf) -model $(arg name) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y)">
+    </node>
+    <node pkg="mavros" type="mavros_node" name="mavros" required="true" clear_params="true" output="$(arg log_output)">
+      <param name="fcu_url" value="$(arg fcu_url)" />
+      <param name="gcs_url" value="$(arg gcs_url)" />
+      <param name="target_system_id" value="$(arg tgt_system)" />
+      <param name="target_component_id" value="$(arg tgt_component)" />
+      <rosparam command="load" file="$(arg pluginlists_yaml)" />
+      <rosparam command="load" file="$(arg config_yaml)" />
+    </node>
+  </group>
+</launch>

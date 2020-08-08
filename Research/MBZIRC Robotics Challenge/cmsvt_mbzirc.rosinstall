@@ -1,0 +1,5 @@
+- git: { local-name: px4_firmware, uri: 'https://github.com/PX4/Firmware.git', version: master }
+- git: { local-name: usb_cam, uri: 'https://github.com/bosch-ros-pkg/usb_cam', version: master }
+- git: { local-name: libsbp, uri: 'https://github.com/swift-nav/libsbp.git', version: master }
+- git: { local-name: swiftnav_piksi, uri: 'https://github.com/PaulBouchier/swiftnav_piksi.git', version: master }
+- git: { local-name: pid, uri: 'https://bitbucket.org/AndyZe/pid.git', version: master }

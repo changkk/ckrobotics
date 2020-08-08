@@ -1,0 +1,7 @@
+string mode
+bool en_route_to_waypoint
+bool in_pid_control
+bool have_received_odometry
+bool is_simulation
+geometry_msgs/Pose global_waypoint
+geometry_msgs/Pose local_waypoint

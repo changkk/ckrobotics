@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Launch arena -->
+  <include file="$(find mbzirc_gazebo)/launch/support/arena.launch" />
+
+  <!-- Launch challenge 3 targets -->
+  <node name="environment_3" pkg="mbzirc_gazebo" type="environment_manager_3.py" output="screen" args="59 89" />
+
+  <!-- Launch UAV 0 with MAVROS -->
+  <include file="$(find mbzirc_gazebo)/launch/support/uav_with_mavros.launch">
+    <arg name="name" value="hexacopter0" />
+    <arg name="sdf" value="$(find mbzirc_gazebo)/models/hexacopter/model0.sdf"/>
+    <arg name="fcu_url" value="udp://localhost:14640@localhost:14657"/>
+    <arg name="x" value="-22.0" />
+    <arg name="y" value="0.0" />
+  </include>
+
+  <!-- Launch UAV 1 with MAVROS -->
+  <include file="$(find mbzirc_gazebo)/launch/support/uav_with_mavros.launch">
+    <arg name="name" value="hexacopter1" />
+    <arg name="sdf" value="$(find mbzirc_gazebo)/models/hexacopter/model1.sdf"/>
+    <arg name="fcu_url" value="udp://localhost:14740@localhost:14757"/>
+    <arg name="x" value="-25.0" />
+    <arg name="y" value="0.0" />
+  </include>
+
+  <!-- Launch UAV 2 with MAVROS -->
+  <include file="$(find mbzirc_gazebo)/launch/support/uav_with_mavros.launch">
+    <arg name="name" value="hexacopter2" />
+    <arg name="sdf" value="$(find mbzirc_gazebo)/models/hexacopter/model2.sdf"/>
+    <arg name="fcu_url" value="udp://localhost:14840@localhost:14857"/>
+    <arg name="x" value="-28.0" />
+    <arg name="y" value="0.0" />
+  </include>
+
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
+</launch>

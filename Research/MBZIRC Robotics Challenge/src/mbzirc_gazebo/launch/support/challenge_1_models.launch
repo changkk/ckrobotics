@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="uav_name" default="hexacopter" />
+  <arg name="start_x" default="0.0" />
+  <arg name="start_y" default="0.0" />
+
+  <!-- Launch UAV with MAVROS -->
+  <include file="$(find mbzirc_gazebo)/launch/support/uav_with_mavros.launch">
+    <arg name="name" value="$(arg uav_name)" />
+    <arg name="fcu_url" value="udp://localhost:14540@localhost:14557" />
+    <arg name="x" value="$(arg start_x)" />
+    <arg name="y" value="$(arg start_y)" />
+  </include>
+
+  <!-- Launch Truck -->
+  <group ns="truck">
+    <arg name="truck_x" default="0.0" />
+    <arg name="truck_y" default="0.0" />
+    <arg name="truck_Y" default="0.0" />
+    <arg name="truck_sdf" default="$(find mbzirc_gazebo)/models/truck/model.sdf" />
+    <arg name="truck_name" default="truck" />
+    <node name="$(anon vehicle_spawn)" output="screen" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(arg truck_sdf) -model $(arg truck_name) -x $(arg truck_x) -y $(arg truck_y) -Y $(arg truck_Y)" />
+  </group>
+</launch>

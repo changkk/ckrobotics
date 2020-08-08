@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+<group ns="/hexacopter">
+  <node name="pose_sync_node" pkg="localizer" type="pose_sync_node" args="pose_sync_node" output="screen">
+    <param name="arm_frame_id" value="local_map"/>
+    <param name="baselink_frame_id" value="baselink"/>
+  </node>
+  <node name="baselink_odom_pub" pkg="localizer" type="baselink_odom_pub" args="baselink_odom_pub" output="screen">
+    <param name="baselink_frame_id" value="baselink"/>
+    <param name="global_map_id" value="global_map"/>
+    <param name="global_odom_topic" value="localizer/global_odom"/>
+  </node>
+</group>
+  <node name="global_map_rtk_gps" pkg="tf" type="static_transform_publisher" args="-10 -45 1.53 0.89 0 0 global_map gps 100"/>
+
+  <node name="local_map_baselink" pkg="tf" type="static_transform_publisher" args="15 10 22 0 0 0 local_map baselink 100"/>
+</launch>

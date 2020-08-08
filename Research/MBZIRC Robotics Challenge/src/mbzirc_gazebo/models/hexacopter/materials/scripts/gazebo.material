@@ -1,0 +1,25 @@
+material Gazebo/ChicagoMaroon
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 0.4 0 0
+      diffuse 0.4 0 0
+      specular 0.1 0.1 0.1 1 1
+    }
+  }
+}
+
+material Gazebo/BurntOrange
+{
+  technique
+  {
+    pass ambient
+    {
+      ambient 1 0.4 0
+      diffuse 1 0.4 0
+      specular 0.1 0.1 0.1 1 1
+    }
+  }
+}

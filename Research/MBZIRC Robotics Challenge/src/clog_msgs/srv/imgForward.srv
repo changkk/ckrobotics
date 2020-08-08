@@ -1,0 +1,8 @@
+#command to FishEye object 1: Request a particular type (FishEye or Pan-tilt) of message 
+#                          2: Continue to publish the same scanpose topic
+#                          3: Stop publishing the scanpose topic
+int8 cmd
+#specify the type of the message : FishEye (0) or Pan-tilt (1). This value is useful when cmd==1 
+int32 type
+---
+int8 ret

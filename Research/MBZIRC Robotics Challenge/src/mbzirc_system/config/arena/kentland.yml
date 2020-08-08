@@ -1,0 +1,16 @@
+arena:
+  angle: 0.9076
+  x_length: 20.0
+  y_length: 90.0
+landing_zone:
+  x_length: 10.0
+  y_length: 10.0
+  x_offset: -5.0
+  y_offset: 0.0
+drop_zone:
+  x_length: 10.0
+  y_length: 10.0
+  x_offset: 0.0
+  y_offset: -25.0
+hexacopter:
+  yaw_offset: 0.0

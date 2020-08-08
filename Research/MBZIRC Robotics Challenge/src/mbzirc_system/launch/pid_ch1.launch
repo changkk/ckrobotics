@@ -1,0 +1,52 @@
+<launch>
+  <group ns="pid">
+    <node name="pid_controller" pkg="pid" type="controller" ns="x_position" output="screen">
+      <param name="Kp" value="0.257" />
+      <param name="Ki" value="0.015" />
+      <param name="Kd" value="0.00" />
+      <param name="upper_limit" value="8.33333" />
+      <param name="lower_limit" value="-8.33333" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="-1" />
+      <param name="diagnostic_period" value="0.05" />
+      <param name="max_loop_frequency" value="30.0" />
+      <param name="min_loop_frequency" value="10.0" />
+    </node>
+    <node name="pid_controller" pkg="pid" type="controller" ns="y_position" output="screen">
+      <param name="Kp" value="0.257" />
+      <param name="Ki" value="0.015" />
+      <param name="Kd" value="0.00" />
+      <param name="upper_limit" value="8.33333" />
+      <param name="lower_limit" value="-8.33333" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="-1" />
+      <param name="diagnostic_period" value="0.05" />
+      <param name="max_loop_frequency" value="30.0" />
+      <param name="min_loop_frequency" value="10.0" />
+    </node>
+    <node name="pid_controller" pkg="pid" type="controller" ns="z_position" output="screen">
+      <param name="Kp" value="0.257" />
+      <param name="Ki" value="0.015" />
+      <param name="Kd" value="0.0" />
+      <param name="upper_limit" value="2.0" />
+      <param name="lower_limit" value="-2.0" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="-1" />
+      <param name="diagnostic_period" value="0.05" />
+      <param name="max_loop_frequency" value="30.0" />
+      <param name="min_loop_frequency" value="10.0" />
+    </node>
+    <node name="pid_controller" pkg="pid" type="controller" ns="yaw" output="screen">
+      <param name="Kp" value="0.05" />
+      <param name="Ki" value="0.0" />
+      <param name="Kd" value="0.0" />
+      <param name="upper_limit" value="1.0" />
+      <param name="lower_limit" value="-1.0" />
+      <param name="windup_limit" value="10" />
+      <param name="cutoff_frequency" value="-1" />
+      <param name="diagnostic_period" value="0.05" />
+      <param name="max_loop_frequency" value="30.0" />
+      <param name="min_loop_frequency" value="10.0" />
+    </node>
+  </group>
+</launch>

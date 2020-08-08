@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="node_name" default="rtk_simulator_node"/>
+  <arg name="uav_pose_subscribe_topic" default="/gazebo/model_states"/>
+  <arg name="uav_pose_publish_topic" default="/localizer/rtk_pose"/>
+  <arg name="uav_gazebo_model_name" default="hexacopter"/>
+  <arg name="gaussian_error_variance" default="0.01"/>
+
+  <node name="$(arg node_name)" pkg="localizer" type="rtk_simulator_node" args="$(arg node_name)">
+    <param name="uav_pose/subscribe_topic" value="$(arg uav_pose_subscribe_topic)"/>
+    <param name="uav_pose/pushlish_topic" value="$(arg uav_pose_publish_topic)"/>
+    <param name="uav_gazebo_model_name" value="$(arg uav_gazebo_model_name)"/>
+    <param name="gaussian_error_variance" value="$(arg gaussian_error_variance)"/>
+  </node>
+</launch>

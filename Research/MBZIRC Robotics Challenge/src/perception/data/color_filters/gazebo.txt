@@ -1,0 +1,6 @@
+red_high 150 30 200 180
+red_low 0 30 200 10
+green 40 30 200 70
+blue 90 30 200 130
+yellow 26 30 200 40
+orange 10 30 200 25

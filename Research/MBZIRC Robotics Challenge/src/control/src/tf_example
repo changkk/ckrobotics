@@ -1,0 +1,50 @@
+  // /*
+  //   1. Try to Transform the waypoint into arm_origin frame
+  //   2. On success : Execute waypoint
+  //      On failure : Ignore **for now!!!**
+  // */
+  // ros::Time startTime = ros::Time::now();
+  // ros::Duration tenSecs(10.0);
+  // ros::Time now = startTime;
+  //
+  // bool success = false;
+  // std_msgs::String errorMsg;
+  //
+  // geometry_msgs::PoseStamped poseStampedGlobal;
+  // geometry_msgs::PoseStamped poseStampedArm;
+  // poseStampedGlobal.header.frame_id = TF_GLOBAL_ORIGIN;
+  // poseStampedGlobal.pose = *msg;
+  //
+  // this->logMessage("test0");
+  // while (now - startTime < tenSecs) {
+  //   try {
+  //       // 1. Transform the waypoint into arm_origin frame
+  //       this->logMessage("test1");
+  //     if (this->tfListener.waitForTransform(this->tfGlobalOrigin, this->tfBaselink, ros::Time(0), ros::Duration(0.5))) {
+  //       tfListener.transformPose(this->tfArmOrigin, poseStampedGlobal, poseStampedArm);
+  //
+  //       this->logMessage("test2");
+  //       // 2. Execute waypoint
+  //       this->mGlobalWaypoint = poseStampedArm.pose;
+  //       this->mMavrosAdapter.executeMoveToWaypoint(this->mGlobalWaypoint);
+  //       this->mEnRouteToWaypoint = true;
+  //       success = true;
+  //       this->logMessage("test3");
+  //       break;
+  //     }
+  //   } catch (tf::TransformException ex) {
+  //     ROS_ERROR("TFException - %s", ex.what());
+  //     success = false;
+  //     errorMsg.data = "Error " + std::string(ex.what()) + " transforming from " + this->tfGlobalOrigin.c_str() + " -> " + this->tfArmOrigin.c_str() + "at uav_control " + this->getNamespace();
+  //     this->mLoggerPublisher.publish(errorMsg);
+  //     break;
+  //   }
+  //   now = ros::Time::now();
+  // }
+  // this->logMessage("test4");
+  //
+  // if (!success) {
+  //   this->mLoggerPublisher.publish(errorMsg);
+  //   this->logMessage("test5");
+  // }
+

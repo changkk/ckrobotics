@@ -1,0 +1,18 @@
+material KentlandFarmGround/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 0.03 0.03 0.03 1
+      specular 0.03 0.03 0.03 1
+      emissive 0.9 0.9 0.9 1.0
+
+      texture_unit
+      {
+        texture kentland_farm.png
+      }
+    }
+  }
+}
