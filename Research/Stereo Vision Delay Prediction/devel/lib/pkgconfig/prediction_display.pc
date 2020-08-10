@@ -1,0 +1,8 @@
+prefix=/home/changkoo/stereo_vision_delay/devel
+
+Name: prediction_display
+Description: Description of prediction_display
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
